@@ -24,6 +24,7 @@
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "hastebin.js": "^1.3.2",
+    "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "sqlite": "^4.0.18",
     "vultrex.db": "^1.4.1"
