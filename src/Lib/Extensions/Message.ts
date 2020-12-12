@@ -1,5 +1,5 @@
 import {Structures, MessageEmbed} from "discord.js";
-import * as moment from "moment";
+import moment from "moment";
 
 export class MessageExt extends Structures.get('Message') {
     time() {
