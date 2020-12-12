@@ -8,6 +8,20 @@ import Logger from "../Utils/Logger";
 import CommandHandler from "../../Handlers/CommandHandler";
 import ListenerHandler from "../../Handlers/ListenerHandler";
 
+import EUBUserFetcher from "../Utils/Fetchers/User";
+import EUBGuildMemberFetcher from "../Utils/Fetchers/GuildMember";
+import EUBMessageFetcher from "../Utils/Fetchers/Message";
+import EUBRoleFetcher from "../Utils/Fetchers/Role";
+import EUBChannelFetcher from "../Utils/Fetchers/Channel";
+
+interface EUBFetchers {
+    user: EUBUserFetcher;
+    member: EUBGuildMemberFetcher;
+    message: EUBMessageFetcher;
+    role: EUBRoleFetcher;
+    channel: EUBChannelFetcher;
+}
+
 export default class EUBClient extends Client {
     prefix: any;
     swearWords: unknown;
@@ -16,6 +30,7 @@ export default class EUBClient extends Client {
     public aliases = new Collection<string, string>();
     public commands = new CommandHandler(this);
     public events = new ListenerHandler(this);
+    public fetch = {} as EUBFetchers;
     public logger = new Logger();
 
     public caches = {
@@ -42,6 +57,12 @@ export default class EUBClient extends Client {
                 Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
             }
         });
+
+        this.fetch.user = new EUBUserFetcher(this);
+        this.fetch.member = new EUBGuildMemberFetcher(this);
+        this.fetch.message = new EUBMessageFetcher(this);
+        this.fetch.role = new EUBRoleFetcher(this);
+        this.fetch.channel = new EUBChannelFetcher(this);
 
         this.login(process.env.DISCORD!);
     }
