@@ -2,7 +2,7 @@
   "name": "earth-united-bot",
   "version": "1.0.1",
   "description": "A Discord bot made for the Earth United Network",
-  "main": "bin/EUB.js",
+  "main": "dist/src/EUB.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

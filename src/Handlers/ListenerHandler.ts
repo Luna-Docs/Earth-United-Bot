@@ -29,7 +29,7 @@ export default class ListenerHandler extends Collection<string, Listener> {
                     this.set(file.name, listener);
 
                     // @ts-ignore
-                    this.client[event.once ? 'once' : 'on'](event.name, (...args: unknown[]) => event.execute(...args));
+                    this.client[listener.once ? 'once' : 'on'](listener.name, (...args: unknown[]) => listener.execute(...args));
                 }
             })
             .on('end', () => {

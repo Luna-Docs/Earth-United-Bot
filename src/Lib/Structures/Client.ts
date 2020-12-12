@@ -1,4 +1,4 @@
-import './Structures/Message';
+import '../Extensions/Message';
 
 import {Client, Collection, Intents} from "discord.js";
 
@@ -63,11 +63,12 @@ export default class EUBClient extends Client {
         this.fetch.message = new EUBMessageFetcher(this);
         this.fetch.role = new EUBRoleFetcher(this);
         this.fetch.channel = new EUBChannelFetcher(this);
-
-        this.login(process.env.DISCORD!);
     }
 
-    public async login(token: string): Promise<string> {
-        return super.login(token);
+    public async start(token: string | any) {
+        this.events.init();
+        this.commands.init();
+
+        return await super.login(token).catch((err) => this.logger.error(err));
     }
 }
