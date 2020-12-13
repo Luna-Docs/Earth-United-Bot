@@ -24,8 +24,14 @@ interface EUBFetchers {
 
 export default class EUBClient extends Client {
     prefix: any;
-    swearWords: unknown;
-    blacklist: unknown;
+    swearWords: any;
+    blacklist: any;
+    db: any;
+    eco: any;
+    punish: any;
+    capitalise = (str: string) => str.split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' ');
+
+    cooldown = new Collection<string, any>();
 
     public aliases = new Collection<string, string>();
     public commands = new CommandHandler(this);

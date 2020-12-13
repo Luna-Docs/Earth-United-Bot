@@ -10,7 +10,7 @@ export default class Listener {
         this.name = name;
     }
 
-    execute(..._args: unknown[]): Promise<void> {
+    execute(..._args: unknown[]) {
         throw console.log(`${this.name} doesn't do anything!`);
     }
 }

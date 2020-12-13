@@ -1,7 +1,7 @@
-import {Message, PermissionString} from "discord.js";
+import { Message, BitFieldResolvable, PermissionString, PermissionResolvable } from "discord.js";
 
 import Cluster from "./Client";
-import {DefaultCommandData, EUBGuildMessage} from "../Types/EUB";
+import { CooldownCommandData, DefaultCommandData, EUBGuildMessage, PermissionCommandData, SettingsCommandData } from "../Types/EUB";
 
 export default class Command {
     client: Cluster;
@@ -11,24 +11,9 @@ export default class Command {
     usages: string[] | string;
     examples: string[] | string;
     description: string;
-    permissions: {
-        client: {
-            channel: PermissionString[];
-            server: PermissionString[];
-        };
-        user: {
-            channel: PermissionString[];
-            server: PermissionString[];
-        };
-    };
-    cooldown: {
-        allowedUses: number;
-        duration: number;
-    };
-    settings: {
-        guildOnly: boolean;
-        dmOnly: boolean;
-    };
+    permissions: PermissionCommandData;
+    cooldown: CooldownCommandData;
+    settings: SettingsCommandData;    
 
     constructor(client: Cluster, data: DefaultCommandData) {
         this.client = client;
@@ -40,11 +25,11 @@ export default class Command {
         this.examples = data.examples = ['No examples have been found!'];
         this.description = data.description;
 
-        this.permissions = data.permissions
-        
-        this.cooldown = data.cooldown;
+        this.permissions = {} as PermissionCommandData; 
 
-        this.settings = data.settings;
+        this.cooldown = {} as CooldownCommandData;
+
+        this.settings = {} as SettingsCommandData;
     }
 
     execute(message: Message, params: string[]): Promise<Message | void> {

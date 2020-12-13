@@ -6,7 +6,8 @@ import {
     MessageEmbed,
     GuildChannel,
     TextChannel,
-    Guild
+    Guild,
+    PermissionResolvable
 } from "discord.js";
 
 import Cluster from "../Structures/Client";
@@ -27,14 +28,15 @@ export interface DefaultCommandData {
     settings: SettingsCommandData;
 }
 
-export interface DefaultPermissionCommandData {
-    server: PermissionString[];
-    channel: PermissionString[];
-}
-
 export interface PermissionCommandData {
-    client: DefaultPermissionCommandData;
-    user: DefaultPermissionCommandData;
+    client: {
+        server: PermissionResolvable;
+        channel: PermissionResolvable;
+    };
+    user: {
+        server: PermissionResolvable;
+        channel: PermissionResolvable;
+    };
 }
 
 export interface CooldownCommandData {
