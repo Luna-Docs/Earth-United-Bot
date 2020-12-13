@@ -26,6 +26,8 @@ class EUBClient extends discord_js_1.Client {
                     discord_js_1.Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
             }
         });
+        this.capitalise = (str) => str.split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' ');
+        this.cooldown = new discord_js_1.Collection();
         this.aliases = new discord_js_1.Collection();
         this.commands = new CommandHandler_1.default(this);
         this.events = new ListenerHandler_1.default(this);

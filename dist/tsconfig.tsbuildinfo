@@ -477,13 +477,13 @@
         "affectsGlobalScope": false
       },
       "../package.json": {
-        "version": "1c40976de81cf5c7f0e3f28e0a84f445f53fe5a6ecf5fc94a120fc35b7901853",
-        "signature": "51651ac70b24baf58a416fc78b8d342faad38de8dc461cdfb6d38dd3c07d6bce",
+        "version": "f01bd06c7f6be9cf467187b637e8919e120cada02eb3461bff11b8a7654a21b9",
+        "signature": "b0c638ec6dc777c859a0fa8434a4bfff654735815b734f94e6b6c3972466f983",
         "affectsGlobalScope": true
       },
       "../src/lib/types/eub.d.ts": {
-        "version": "9783106d2aaf8b6fba56ea8476436e3a14948d1e3698e0460aa8ab729783b4d6",
-        "signature": "9783106d2aaf8b6fba56ea8476436e3a14948d1e3698e0460aa8ab729783b4d6",
+        "version": "3e9372d4643d18cdca77b322642d1ed59bc61c3c1a0e6e4efd72b10ccc46a6c6",
+        "signature": "3e9372d4643d18cdca77b322642d1ed59bc61c3c1a0e6e4efd72b10ccc46a6c6",
         "affectsGlobalScope": false
       },
       "../node_modules/logform/index.d.ts": {
@@ -522,8 +522,8 @@
         "affectsGlobalScope": false
       },
       "../src/lib/structures/command.ts": {
-        "version": "e85b4c6cfa5a0e571bc793fb1f1f2a39a2408ab7a2aa5fb84537dfd5a506caa9",
-        "signature": "142015b7f8239b2260e4b756e4a73f162dd1f5e86ba92bfdfd849b39e211da17",
+        "version": "ec7df2d77a44128725af944e46a411b0e238e4990b01c275fb21ad837687faec",
+        "signature": "94bd4e2f7ec7c93bb43d731356de3ba0b78f12a96f2ecfdd6d4f36c7395de4cb",
         "affectsGlobalScope": false
       },
       "../src/handlers/commandhandler.ts": {
@@ -532,8 +532,8 @@
         "affectsGlobalScope": false
       },
       "../src/lib/structures/listener.ts": {
-        "version": "277db42542322c88cc635ebdeb2638a3529d5592b43f72fc07f4d2db8bbbaec2",
-        "signature": "d8dc73f2b596d26e039dfed4b7d41e54dc604c85eeefce012909cdaafb18d008",
+        "version": "65fa4f0fad2db8f01ef6898964f4772105a3d2cc530ef201148ae1e20d6a20b0",
+        "signature": "7fb11fa0838bd10e8b1f9a2d8437210086ede83a9ccba83452b229da1c403848",
         "affectsGlobalScope": false
       },
       "../src/handlers/listenerhandler.ts": {
@@ -567,17 +567,27 @@
         "affectsGlobalScope": false
       },
       "../src/lib/structures/client.ts": {
-        "version": "5f5b9752f8b2e0f13fe4ee4e47f69291d646b18220b2864d9410c68ce21d5efb",
-        "signature": "cdfce1020e60c1669d0b2a10b1f0763ca833e474cb16a127faf31fe84b86cd43",
+        "version": "9559f63502396dda76760a5339dd88d2244608a70de1da22167cc83e2e831156",
+        "signature": "58ffd12cd3a2c3cc40ec6d902bf54df40573211debdda85f84acc64e304e2c26",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/vultrex.db/dist/interfaces/rowdata.d.ts": {
+        "version": "1711ce1fdbac00d2a34f1dbb33b33933096563362c195c76e3712fece421b257",
+        "signature": "1711ce1fdbac00d2a34f1dbb33b33933096563362c195c76e3712fece421b257",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/vultrex.db/dist/index.d.ts": {
+        "version": "cf17b9a49340b839e84143e93dc0bdbcf8c2147de1ebef848018935ab6f7a5d8",
+        "signature": "cf17b9a49340b839e84143e93dc0bdbcf8c2147de1ebef848018935ab6f7a5d8",
         "affectsGlobalScope": false
       },
       "../src/eub.ts": {
-        "version": "43492b59d5bd5b991614d5ba0832a246804b9b781518fc8ba69f627c0ed4e8f2",
+        "version": "f5b2d9baebdcb9830e754cf4e611253435eb08e53913f0eebdd60ec8df7ae051",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
       "../src/commands/general/ping.ts": {
-        "version": "ee50f30a22878a0cb402b3d63d95c7dbf1f03d25bfd348bcdb08251b2be29166",
+        "version": "5cccd4139bfb2d3070280a3db56bf146ec97f52241d60a5f3eee2c15c75f583d",
         "signature": "d5f3da04dcd7ebf4e67e7ef3ea7692f7a5196bb0de82c06ef75ca87cbf9d3e6c",
         "affectsGlobalScope": false
       },
@@ -586,14 +596,29 @@
         "signature": "7f3e327c9b9e459c2605d4f05f34c2b9bb0d10d2a6e0142bc278f05522c47e89",
         "affectsGlobalScope": false
       },
+      "../src/listeners/guildinviteposted.ts": {
+        "version": "732c4e9711639ed1436dd90d3951ca347d737084fc0cea250eed823bef07d0f1",
+        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/pretty-ms/index.d.ts": {
+        "version": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
+        "signature": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
+        "affectsGlobalScope": false
+      },
+      "../src/listeners/message.ts": {
+        "version": "64b79d2d62b93999b3882bf46c8a00b2995fa6f695b537040c5e682a332c9012",
+        "signature": "3288449cdd760f547af6c9c9b3839c6ece1931e6a832fbc579ace8c1c7ecc287",
+        "affectsGlobalScope": false
+      },
       "../src/listeners/ready.ts": {
         "version": "40df12855fa4ffd6d7638b24eab07bd81a0624563ea5ed5750739413ab0e61ea",
         "signature": "129b565b4274fd921dc50aca5dfed492981ad983ab557fd0a1fc8c2e33363847",
         "affectsGlobalScope": false
       },
       "../package-lock.json": {
-        "version": "5f07dc71d4e9ddd964880e4c6726f12796966a4bfda20c27ee900d9a5de4f77e",
-        "signature": "3c6034b603f8405cc408938de9c001ceda282c0bc775d971fa76c62e73cc9070",
+        "version": "986801202ae2c11132d937cb5c47f0bfa97f49b6d3a03b343e6753ea7bc144b2",
+        "signature": "292c77d5d2a7f5fb7b1158860f4d7e43361d7a8bd7646041000d2f20b2e30e5a",
         "affectsGlobalScope": true
       },
       "../tsconfig.json": {
@@ -628,7 +653,6 @@
       "resolveJsonModule": true,
       "esModuleInterop": true,
       "project": "../tsconfig.json",
-      "watch": true,
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
@@ -814,6 +838,9 @@
       "../node_modules/dotenv/types/index.d.ts": [
         "../node_modules/@types/node/index.d.ts"
       ],
+      "../node_modules/vultrex.db/dist/index.d.ts": [
+        "../node_modules/vultrex.db/dist/interfaces/rowdata.d.ts"
+      ],
       "../node_modules/winston-transport/index.d.ts": [
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/@types/node/stream.d.ts",
@@ -843,8 +870,10 @@
         "../src/lib/types/eub.d.ts"
       ],
       "../src/eub.ts": [
+        "../node_modules/@types/node/console.d.ts",
         "../node_modules/dotenv/types/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
+        "../node_modules/vultrex.db/dist/index.d.ts",
         "../src/lib/structures/client.ts"
       ],
       "../src/handlers/commandhandler.ts": [
@@ -930,6 +959,15 @@
       "../src/lib/utils/logger.ts": [
         "../node_modules/tslib/tslib.d.ts",
         "../node_modules/winston/index.d.ts"
+      ],
+      "../src/listeners/message.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/moment/ts3.1-typings/moment.d.ts",
+        "../node_modules/pretty-ms/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/listener.ts",
+        "../src/lib/types/eub.d.ts"
       ],
       "../src/listeners/ready.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
@@ -1120,6 +1158,9 @@
       "../node_modules/dotenv/types/index.d.ts": [
         "../node_modules/@types/node/index.d.ts"
       ],
+      "../node_modules/vultrex.db/dist/index.d.ts": [
+        "../node_modules/vultrex.db/dist/interfaces/rowdata.d.ts"
+      ],
       "../node_modules/winston-transport/index.d.ts": [
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/@types/node/stream.d.ts",
@@ -1208,6 +1249,11 @@
         "../node_modules/discord.js/typings/index.d.ts",
         "../src/lib/structures/client.ts"
       ],
+      "../src/listeners/message.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/listener.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/listeners/ready.ts": [
         "../src/lib/structures/listener.ts"
       ]
@@ -1266,6 +1312,7 @@
       "../node_modules/dotenv/types/index.d.ts",
       "../node_modules/logform/index.d.ts",
       "../node_modules/moment/ts3.1-typings/moment.d.ts",
+      "../node_modules/pretty-ms/index.d.ts",
       "../node_modules/tslib/tslib.d.ts",
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
       "../node_modules/typescript/lib/lib.es2015.core.d.ts",
@@ -1309,6 +1356,8 @@
       "../node_modules/typescript/lib/lib.esnext.promise.d.ts",
       "../node_modules/typescript/lib/lib.esnext.string.d.ts",
       "../node_modules/typescript/lib/lib.esnext.weakref.d.ts",
+      "../node_modules/vultrex.db/dist/index.d.ts",
+      "../node_modules/vultrex.db/dist/interfaces/rowdata.d.ts",
       "../node_modules/winston-transport/index.d.ts",
       "../node_modules/winston/index.d.ts",
       "../node_modules/winston/lib/winston/config/index.d.ts",
@@ -1331,6 +1380,8 @@
       "../src/lib/utils/fetchers/role.ts",
       "../src/lib/utils/fetchers/user.ts",
       "../src/lib/utils/logger.ts",
+      "../src/listeners/guildinviteposted.ts",
+      "../src/listeners/message.ts",
       "../src/listeners/ready.ts",
       "../tsconfig.json"
     ]

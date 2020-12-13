@@ -1,6 +1,6 @@
-import { Message, PermissionString } from "discord.js";
+import { Message } from "discord.js";
 import Cluster from "./Client";
-import { DefaultCommandData } from "../Types/EUB";
+import { CooldownCommandData, DefaultCommandData, PermissionCommandData, SettingsCommandData } from "../Types/EUB";
 export default class Command {
     client: Cluster;
     category: string;
@@ -9,24 +9,9 @@ export default class Command {
     usages: string[] | string;
     examples: string[] | string;
     description: string;
-    permissions: {
-        client: {
-            channel: PermissionString[];
-            server: PermissionString[];
-        };
-        user: {
-            channel: PermissionString[];
-            server: PermissionString[];
-        };
-    };
-    cooldown: {
-        allowedUses: number;
-        duration: number;
-    };
-    settings: {
-        guildOnly: boolean;
-        dmOnly: boolean;
-    };
+    permissions: PermissionCommandData;
+    cooldown: CooldownCommandData;
+    settings: SettingsCommandData;
     constructor(client: Cluster, data: DefaultCommandData);
     execute(message: Message, params: string[]): Promise<Message | void>;
 }

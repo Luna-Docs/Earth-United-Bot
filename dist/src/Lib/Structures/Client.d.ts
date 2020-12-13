@@ -19,8 +19,13 @@ interface EUBFetchers {
 }
 export default class EUBClient extends Client {
     prefix: any;
-    swearWords: unknown;
-    blacklist: unknown;
+    swearWords: any;
+    blacklist: any;
+    db: any;
+    eco: any;
+    punish: any;
+    capitalise: (str: string) => string;
+    cooldown: Collection<string, any>;
     aliases: Collection<string, string>;
     commands: CommandHandler;
     events: ListenerHandler;

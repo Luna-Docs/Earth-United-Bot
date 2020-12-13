@@ -4,5 +4,5 @@ export default class Listener {
     name: string;
     once: boolean;
     constructor(client: Cluster, name: string);
-    execute(..._args: unknown[]): Promise<void>;
+    execute(..._args: unknown[]): void;
 }

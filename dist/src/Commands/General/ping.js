@@ -14,12 +14,12 @@ class Ping extends Command_1.default {
             description: 'Check the bot\'s ping towards the server.',
             permissions: {
                 client: {
-                    server: ['SEND_MESSAGES'],
-                    channel: ['SEND_MESSAGES']
+                    channel: ['SEND_MESSAGES'],
+                    server: ['SEND_MESSAGES']
                 },
                 user: {
-                    server: ['SEND_MESSAGES'],
-                    channel: ['SEND_MESSAGES']
+                    channel: ['SEND_MESSAGES'],
+                    server: ['SEND_MESSAGES']
                 }
             },
             cooldown: {

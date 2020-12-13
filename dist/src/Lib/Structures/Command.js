@@ -9,9 +9,9 @@ class Command {
         this.usages = data.usages = ['No usages have been found!'];
         this.examples = data.examples = ['No examples have been found!'];
         this.description = data.description;
-        this.permissions = data.permissions;
-        this.cooldown = data.cooldown;
-        this.settings = data.settings;
+        this.permissions = {};
+        this.cooldown = {};
+        this.settings = {};
     }
     execute(message, params) {
         throw console.log(`${this.name} doesn't execute anything!`);
