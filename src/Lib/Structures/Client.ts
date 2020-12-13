@@ -1,9 +1,10 @@
 import '../Extensions/Message';
 
-import {Client, Collection, Intents} from "discord.js";
+import { Client, Collection, MessageEmbed, Intents } from "discord.js";
+import moment from "moment";
 
 import pkg from "../../../package.json";
-import {BanLog, UnbanLog, MuteLog} from "../Types/EUB";
+import { BanLog, UnbanLog, MuteLog, EUBGuildMessage } from "../Types/EUB";
 import Logger from "../Utils/Logger";
 import CommandHandler from "../../Handlers/CommandHandler";
 import ListenerHandler from "../../Handlers/ListenerHandler";
@@ -58,9 +59,9 @@ export default class EUBClient extends Client {
             partials: ['MESSAGE', 'REACTION', 'USER', 'GUILD_MEMBER', 'CHANNEL'],
             ws: {
                 intents: Intents.FLAGS.GUILDS | Intents.FLAGS.GUILD_MEMBERS | Intents.FLAGS.GUILD_BANS |
-                Intents.FLAGS.GUILD_INVITES | Intents.FLAGS.GUILD_PRESENCES | Intents.FLAGS.GUILD_MESSAGES |
-                Intents.FLAGS.GUILD_MESSAGE_REACTIONS | Intents.FLAGS.DIRECT_MESSAGES |
-                Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
+                    Intents.FLAGS.GUILD_INVITES | Intents.FLAGS.GUILD_PRESENCES | Intents.FLAGS.GUILD_MESSAGES |
+                    Intents.FLAGS.GUILD_MESSAGE_REACTIONS | Intents.FLAGS.DIRECT_MESSAGES |
+                    Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
             }
         });
 
@@ -76,5 +77,60 @@ export default class EUBClient extends Client {
         this.commands.init();
 
         return await super.login(token).catch((err) => this.logger.error(err));
+    }
+
+    public embed(type: 'base' | 'bugs' | 'error', title: string, description: string): MessageEmbed {
+        const embed = new MessageEmbed();
+
+        if (type === 'base')
+            embed.setColor('00ff81')
+                .setTitle(title)
+                .setDescription(description)
+                .setFooter(this.time);
+
+        if (type === 'bugs')
+            embed.setColor('777d84')
+                .setTitle(title)
+                .setDescription(description)
+                .setFooter(this.time);
+
+        if (type === 'error')
+            embed.setColor('ef3b3b')
+                .setTitle(`Error: ${title}`)
+                .setDescription(description)
+                .setFooter(this.time);
+        
+        return embed;
+    }
+
+    public sem(msg: EUBGuildMessage, type: 'base' | 'bugs' | 'error', title: string, description: string) {
+        const embed = new MessageEmbed();
+
+        if (type === 'base') {
+            embed.setColor('00ff81')
+                .setTitle(title)
+                .setDescription(description)
+                .setFooter(this.time);
+
+            return msg.channel.send(embed);
+        } else if (type === 'bugs') {
+            embed.setColor('777d84')
+                .setTitle(title)
+                .setDescription(description)
+                .setFooter(this.time);
+
+            return msg.channel.send(embed);
+        } else if (type === 'error') {
+            embed.setColor('ef3b3b')
+                .setTitle(`Error: ${title}`)
+                .setDescription(description)
+                .setFooter(this.time);
+
+            return msg.channel.send(embed);
+        }
+    }
+
+    get time(): string {
+        return moment().format('MMMM [the] Do [in] YYYY [@] hh:mm A');
     }
 }
