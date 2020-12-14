@@ -17,7 +17,7 @@ class CommandHandler extends discord_js_1.Collection {
             const file = path_1.parse(item.path);
             if (!file.ext || file.ext !== '.js')
                 return;
-            const req = ((r) => r.default || r)(require(path_1.resolve(path_1.join(file.dir, file.base))));
+            const req = ((r) => r.default || r)(require(path_1.join(file.dir, file.base)));
             const newReq = new req(this.client, file.name, path_1.resolve(path_1.join(file.dir, file.base)));
             this.set(file.name, newReq);
         })

@@ -1,6 +1,6 @@
 import '../Extensions/Message';
 
-import { Client, Collection, MessageEmbed, Intents } from "discord.js";
+import { Client, Collection, MessageEmbed, Intents, Message } from "discord.js";
 import moment from "moment";
 
 import pkg from "../../../package.json";
@@ -104,7 +104,7 @@ export default class EUBClient extends Client {
         return embed;
     }
 
-    public sem(msg: EUBGuildMessage, type: 'base' | 'bugs' | 'error', title: string, description: string) {
+    public sem(msg: Message | EUBGuildMessage, type: 'base' | 'bugs' | 'error', title: string, description: string) {
         const embed = new MessageEmbed();
 
         if (type === 'base') {

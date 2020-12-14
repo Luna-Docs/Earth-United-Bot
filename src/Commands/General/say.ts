@@ -1,18 +1,16 @@
-import { MessageEmbed } from "discord.js";
-
 import Command from "../../Lib/Structures/Command";
 import { EUBGuildMessage } from "../../Lib/Types/EUB";
 import Cluster from "../../Lib/Structures/Client";
 
-export default class Ping extends Command {
+export default class Say extends Command {
     constructor(client: Cluster) {
         super(client, {
             category: 'General',
-            name: 'ping',
-            aliases: ['png'],
-            usages: ['!ping'],
-            examples: ['!ping'],
-            description: 'Check the bot\'s ping towards the server.',
+            name: 'say',
+            aliases: ['sy'],
+            usages: ['!say'],
+            examples: ['!say I think I might be inlove with you  :3'],
+            description: 'Let the bot say something.',
             permissions: {
                 client: {
                     channel: ['SEND_MESSAGES'],
@@ -35,16 +33,8 @@ export default class Ping extends Command {
     }
 
     public async execute(message: EUBGuildMessage, args: string[]) {
-        const ping = await message.channel.send('Calculating...');
+        const params = args.join(' ');
 
-        setInterval(() => {
-            const embed = new MessageEmbed()
-                .setColor('00ff81')
-                .setTitle(`Ping towards: ${message.guild!.name}`)
-                .addField('Response Latency', `${ping.createdTimestamp - message.createdTimestamp}ms`, true)
-                .addField('API Latency', Math.floor(this.client.ws.ping), true);
-
-            return ping.edit('> Ping Fetched!', embed);
-        }, 3000)
+        return message.channel.send(`Arguments: ${params}`);
     }
 }

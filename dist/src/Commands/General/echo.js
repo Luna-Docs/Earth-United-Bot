@@ -1,17 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const discord_js_1 = require("discord.js");
 const Command_1 = tslib_1.__importDefault(require("../../Lib/Structures/Command"));
-class Ping extends Command_1.default {
+class Echo extends Command_1.default {
     constructor(client) {
         super(client, {
             category: 'General',
-            name: 'ping',
-            aliases: ['png'],
-            usages: ['!ping'],
-            examples: ['!ping'],
-            description: 'Check the bot\'s ping towards the server.',
+            name: 'echo',
+            aliases: ['ec'],
+            usages: ['!echo <Parameters>'],
+            examples: ['!echo I love you 🥰'],
+            description: 'Let the bot say something but with an embed.',
             permissions: {
                 client: {
                     channel: ['SEND_MESSAGES'],
@@ -33,16 +32,9 @@ class Ping extends Command_1.default {
         });
     }
     async execute(message, args) {
-        const ping = await message.channel.send('Calculating...');
-        setInterval(() => {
-            const embed = new discord_js_1.MessageEmbed()
-                .setColor('00ff81')
-                .setTitle(`Ping towards: ${message.guild.name}`)
-                .addField('Response Latency', `${ping.createdTimestamp - message.createdTimestamp}ms`, true)
-                .addField('API Latency', Math.floor(this.client.ws.ping), true);
-            return ping.edit('> Ping Fetched!', embed);
-        }, 3000);
+        const params = args.join(' ');
+        return this.client.sem(message, 'base', `Echo | Author: ${message.author.username}`, params);
     }
 }
-exports.default = Ping;
-//# sourceMappingURL=ping.js.map
+exports.default = Echo;
+//# sourceMappingURL=echo.js.map

@@ -216,6 +216,16 @@
         "signature": "9eb0ae9fa333acfc2dcbe6a7eaa2ab8be46b97ca259982c797c39167823235d5",
         "affectsGlobalScope": false
       },
+      "../node_modules/@discordjs/collection/dist/index.d.ts": {
+        "version": "7be7f76b784383fa84812ca7eb8ad10315c9d482c0d25f178645365405509d44",
+        "signature": "7be7f76b784383fa84812ca7eb8ad10315c9d482c0d25f178645365405509d44",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/discord.js/typings/index.d.ts": {
+        "version": "bbb87411988e93370461ac33c6437098c8cd39e9a7c92ea0d94b6a375dbe52cc",
+        "signature": "bbb87411988e93370461ac33c6437098c8cd39e9a7c92ea0d94b6a375dbe52cc",
+        "affectsGlobalScope": true
+      },
       "../node_modules/@types/node/globals.d.ts": {
         "version": "215d8d9a2c480fd460127edc048d68d9931d3b27f95132253a6e71975f060bb1",
         "signature": "215d8d9a2c480fd460127edc048d68d9931d3b27f95132253a6e71975f060bb1",
@@ -456,16 +466,6 @@
         "signature": "c9ae0b351a07b52f29a28e869d8c7c8d29743bbb5eeddc7c0b5b2a69a2450528",
         "affectsGlobalScope": false
       },
-      "../node_modules/@discordjs/collection/dist/index.d.ts": {
-        "version": "7be7f76b784383fa84812ca7eb8ad10315c9d482c0d25f178645365405509d44",
-        "signature": "7be7f76b784383fa84812ca7eb8ad10315c9d482c0d25f178645365405509d44",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/discord.js/typings/index.d.ts": {
-        "version": "bbb87411988e93370461ac33c6437098c8cd39e9a7c92ea0d94b6a375dbe52cc",
-        "signature": "bbb87411988e93370461ac33c6437098c8cd39e9a7c92ea0d94b6a375dbe52cc",
-        "affectsGlobalScope": true
-      },
       "../node_modules/moment/ts3.1-typings/moment.d.ts": {
         "version": "f97edc4d3b4dd0b32766e9633086497565c37657fb591cc84a35864db4bc2fc5",
         "signature": "f97edc4d3b4dd0b32766e9633086497565c37657fb591cc84a35864db4bc2fc5",
@@ -477,7 +477,7 @@
         "affectsGlobalScope": false
       },
       "../package.json": {
-        "version": "f01bd06c7f6be9cf467187b637e8919e120cada02eb3461bff11b8a7654a21b9",
+        "version": "fd130520cffc82b53d4c236539ea0c9713014df88801f5df53978cb5b0144b79",
         "signature": "b0c638ec6dc777c859a0fa8434a4bfff654735815b734f94e6b6c3972466f983",
         "affectsGlobalScope": true
       },
@@ -527,7 +527,7 @@
         "affectsGlobalScope": false
       },
       "../src/handlers/commandhandler.ts": {
-        "version": "0962a14ed45f37d6e9ac29c592e3be3f60ef20b979eadcb66abd38accbd25111",
+        "version": "c4ae4de04484f4fd4b8f00e1e70b2ba44a3960c65516721d41f02fdd34a013d0",
         "signature": "a35b3c57ab0c02c33f11d8edbbefd1f950bf877f4ec9183c597fdcb0bdf9b576",
         "affectsGlobalScope": false
       },
@@ -567,8 +567,8 @@
         "affectsGlobalScope": false
       },
       "../src/lib/structures/client.ts": {
-        "version": "9559f63502396dda76760a5339dd88d2244608a70de1da22167cc83e2e831156",
-        "signature": "58ffd12cd3a2c3cc40ec6d902bf54df40573211debdda85f84acc64e304e2c26",
+        "version": "890fa1e945ed0ab0969b3a36b7a7ea83cf0ce9ec570433c97c5137621cada40a",
+        "signature": "a168f8d1a4d591ec83257b35349a4bf9e6c90636ebb0b53a819721ce95b16763",
         "affectsGlobalScope": false
       },
       "../node_modules/vultrex.db/dist/interfaces/rowdata.d.ts": {
@@ -582,13 +582,33 @@
         "affectsGlobalScope": false
       },
       "../src/eub.ts": {
-        "version": "f5b2d9baebdcb9830e754cf4e611253435eb08e53913f0eebdd60ec8df7ae051",
+        "version": "19cdebf7010d7647ebcaba0c926f9e3f904b3263ba37092de4df6cf90f94bc5b",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
+      "../src/commands/admin/test.ts": {
+        "version": "6268ce8928c63ff61c52dc5ec266e87651166d8b0a5b0903789dc70956d67fdd",
+        "signature": "112c4a2c6f323eb38935d5b68d221ba3b38a9e9125c14bdeb3fc91790def965b",
+        "affectsGlobalScope": false
+      },
+      "../src/commands/general/echo.ts": {
+        "version": "d61f3d8851113632654a61d985ce1a71add444c36c5dc943a91481eba95b6f57",
+        "signature": "f6e65ef95c67df83a6ca0246e222e39169e25c9dacd226a17d6e135acec0729a",
+        "affectsGlobalScope": false
+      },
       "../src/commands/general/ping.ts": {
-        "version": "5cccd4139bfb2d3070280a3db56bf146ec97f52241d60a5f3eee2c15c75f583d",
-        "signature": "d5f3da04dcd7ebf4e67e7ef3ea7692f7a5196bb0de82c06ef75ca87cbf9d3e6c",
+        "version": "e74cf3eefe20070500f6c315d6741b275f7ee1aa016ba4b742c9eee8322e5f8a",
+        "signature": "39c6d868ba0443a65699763d0a2b356ca02ce19033725ee4eeccc60b21675b05",
+        "affectsGlobalScope": false
+      },
+      "../src/commands/general/say.ts": {
+        "version": "2a9c9496789b69f6d703dcf1e17949feaa2c5251050346e2d7901cda8309f992",
+        "signature": "7cd43ada4457ed424a688c9af4557a73c73df7bd00f0ed556e9d9368b7d395c4",
+        "affectsGlobalScope": false
+      },
+      "../src/commands/leveling/level.ts": {
+        "version": "9dd413f1e49914e6eba7a36a6dea779c7f5910a9cfd05783a6d633d3e44805ee",
+        "signature": "50da6ec64f9bad18ed02dc1d23b40c8d226510653d87321b560a1ec82a3aef91",
         "affectsGlobalScope": false
       },
       "../src/lib/structures/task.ts": {
@@ -597,8 +617,8 @@
         "affectsGlobalScope": false
       },
       "../src/listeners/guildinviteposted.ts": {
-        "version": "732c4e9711639ed1436dd90d3951ca347d737084fc0cea250eed823bef07d0f1",
-        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "version": "7bd9200ece10db5c0640cbcb363190b7b0ce1c8b9baf1e51066f505fe39b7b52",
+        "signature": "b9c56b7511dd5c57041466266aa5b7f6211c5c441a0080b144116771cf29f9b4",
         "affectsGlobalScope": false
       },
       "../node_modules/pretty-ms/index.d.ts": {
@@ -607,8 +627,8 @@
         "affectsGlobalScope": false
       },
       "../src/listeners/message.ts": {
-        "version": "64b79d2d62b93999b3882bf46c8a00b2995fa6f695b537040c5e682a332c9012",
-        "signature": "3288449cdd760f547af6c9c9b3839c6ece1931e6a832fbc579ace8c1c7ecc287",
+        "version": "e33ae9b228605cd7595cdbb672ce3119861e336d28a4903b85d5c2c0b17285f0",
+        "signature": "470ec54820317a2289d339fd1396cebe1ae9f4d85201303d009742d218afcb67",
         "affectsGlobalScope": false
       },
       "../src/listeners/ready.ts": {
@@ -617,7 +637,7 @@
         "affectsGlobalScope": false
       },
       "../package-lock.json": {
-        "version": "986801202ae2c11132d937cb5c47f0bfa97f49b6d3a03b343e6753ea7bc144b2",
+        "version": "7b0c7803f89a49ed568eedfaa1d518e6c599e18eebfbb3e192340165986fba0e",
         "signature": "292c77d5d2a7f5fb7b1158860f4d7e43361d7a8bd7646041000d2f20b2e30e5a",
         "affectsGlobalScope": true
       },
@@ -653,6 +673,7 @@
       "resolveJsonModule": true,
       "esModuleInterop": true,
       "project": "../tsconfig.json",
+      "watch": true,
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
@@ -862,6 +883,19 @@
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/winston-transport/index.d.ts"
       ],
+      "../src/commands/admin/test.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/general/echo.ts": [
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/commands/general/ping.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
@@ -869,8 +903,20 @@
         "../src/lib/structures/command.ts",
         "../src/lib/types/eub.d.ts"
       ],
+      "../src/commands/general/say.ts": [
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/leveling/level.ts": [
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/eub.ts": [
-        "../node_modules/@types/node/console.d.ts",
+        "../node_modules/discord.js/typings/index.d.ts",
         "../node_modules/dotenv/types/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
         "../node_modules/vultrex.db/dist/index.d.ts",
@@ -899,6 +945,7 @@
       ],
       "../src/lib/structures/client.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/tslib/tslib.d.ts",
         "../package.json",
         "../src/handlers/commandhandler.ts",
@@ -960,12 +1007,19 @@
         "../node_modules/tslib/tslib.d.ts",
         "../node_modules/winston/index.d.ts"
       ],
+      "../src/listeners/guildinviteposted.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/listener.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/listeners/message.ts": [
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/discord.js/typings/index.d.ts",
         "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/pretty-ms/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/command.ts",
         "../src/lib/structures/listener.ts",
         "../src/lib/types/eub.d.ts"
       ],
@@ -1182,10 +1236,33 @@
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/winston-transport/index.d.ts"
       ],
-      "../src/commands/general/ping.ts": [
+      "../src/commands/admin/test.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
         "../src/lib/structures/client.ts",
-        "../src/lib/structures/command.ts"
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/general/echo.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/general/ping.ts": [
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/general/say.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/leveling/level.ts": [
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
       ],
       "../src/handlers/commandhandler.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
@@ -1248,6 +1325,10 @@
       "../src/lib/utils/fetchers/user.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
         "../src/lib/structures/client.ts"
+      ],
+      "../src/listeners/guildinviteposted.ts": [
+        "../src/lib/structures/listener.ts",
+        "../src/lib/types/eub.d.ts"
       ],
       "../src/listeners/message.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
@@ -1364,7 +1445,10 @@
       "../node_modules/winston/lib/winston/transports/index.d.ts",
       "../package-lock.json",
       "../package.json",
+      "../src/commands/admin/test.ts",
+      "../src/commands/general/echo.ts",
       "../src/commands/general/ping.ts",
+      "../src/commands/general/say.ts",
       "../src/eub.ts",
       "../src/handlers/commandhandler.ts",
       "../src/handlers/listenerhandler.ts",

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
+const discord_js_1 = require("discord.js");
 const dotenv_1 = require("dotenv");
 dotenv_1.config({ path: `${__dirname}/../.env` });
 const Client_1 = tslib_1.__importDefault(require("./Lib/Structures/Client"));
@@ -33,6 +34,7 @@ db.connect().then(async () => {
             client.prefix['default'] = '!';
             client.swearWords = await client.db.get(`swear-words`, []);
             client.blacklist = await client.db.get(`blacklisted`, []);
+            client.punishments = await client.punish.get(`${(new discord_js_1.User(client, {}).id)}-punishments`, []);
             await client.logger.info('Punishments Database Connected!');
             client.start("Nzg3MDQxMDk3MDMzMDU2MjY2.X9PLJA.QhoJko7ecyVhnLRTbQ9C85woOZI");
         });

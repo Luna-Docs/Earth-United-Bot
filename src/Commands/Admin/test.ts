@@ -8,11 +8,11 @@ export default class Ping extends Command {
     constructor(client: Cluster) {
         super(client, {
             category: 'General',
-            name: 'ping',
-            aliases: ['png'],
-            usages: ['!ping'],
-            examples: ['!ping'],
-            description: 'Check the bot\'s ping towards the server.',
+            name: 'test',
+            aliases: ['tst'],
+            usages: ['!test'],
+            examples: ['!test'],
+            description: 'Test if the bot responds.',
             permissions: {
                 client: {
                     channel: ['SEND_MESSAGES'],
@@ -35,16 +35,6 @@ export default class Ping extends Command {
     }
 
     public async execute(message: EUBGuildMessage, args: string[]) {
-        const ping = await message.channel.send('Calculating...');
-
-        setInterval(() => {
-            const embed = new MessageEmbed()
-                .setColor('00ff81')
-                .setTitle(`Ping towards: ${message.guild!.name}`)
-                .addField('Response Latency', `${ping.createdTimestamp - message.createdTimestamp}ms`, true)
-                .addField('API Latency', Math.floor(this.client.ws.ping), true);
-
-            return ping.edit('> Ping Fetched!', embed);
-        }, 3000)
+        return message.channel.send(args.join(' '));
     }
 }

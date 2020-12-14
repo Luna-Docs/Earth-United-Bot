@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 require("../Extensions/Message");
 const discord_js_1 = require("discord.js");
+const moment_1 = tslib_1.__importDefault(require("moment"));
 const package_json_1 = tslib_1.__importDefault(require("../../../package.json"));
 const Logger_1 = tslib_1.__importDefault(require("../Utils/Logger"));
 const CommandHandler_1 = tslib_1.__importDefault(require("../../Handlers/CommandHandler"));
@@ -52,6 +53,52 @@ class EUBClient extends discord_js_1.Client {
         this.events.init();
         this.commands.init();
         return await super.login(token).catch((err) => this.logger.error(err));
+    }
+    embed(type, title, description) {
+        const embed = new discord_js_1.MessageEmbed();
+        if (type === 'base')
+            embed.setColor('00ff81')
+                .setTitle(title)
+                .setDescription(description)
+                .setFooter(this.time);
+        if (type === 'bugs')
+            embed.setColor('777d84')
+                .setTitle(title)
+                .setDescription(description)
+                .setFooter(this.time);
+        if (type === 'error')
+            embed.setColor('ef3b3b')
+                .setTitle(`Error: ${title}`)
+                .setDescription(description)
+                .setFooter(this.time);
+        return embed;
+    }
+    sem(msg, type, title, description) {
+        const embed = new discord_js_1.MessageEmbed();
+        if (type === 'base') {
+            embed.setColor('00ff81')
+                .setTitle(title)
+                .setDescription(description)
+                .setFooter(this.time);
+            return msg.channel.send(embed);
+        }
+        else if (type === 'bugs') {
+            embed.setColor('777d84')
+                .setTitle(title)
+                .setDescription(description)
+                .setFooter(this.time);
+            return msg.channel.send(embed);
+        }
+        else if (type === 'error') {
+            embed.setColor('ef3b3b')
+                .setTitle(`Error: ${title}`)
+                .setDescription(description)
+                .setFooter(this.time);
+            return msg.channel.send(embed);
+        }
+    }
+    get time() {
+        return moment_1.default().format('MMMM [the] Do [in] YYYY [@] hh:mm A');
     }
 }
 exports.default = EUBClient;

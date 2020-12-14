@@ -23,7 +23,7 @@ export default class CommandHandler extends Collection<string, Command> {
                 const file = parse(item.path);
                 if (!file.ext || file.ext !== '.js') return;
 
-                const req = ((r) => r.default || r)(require(resolve(join(file.dir, file.base))));
+                const req = ((r) => r.default || r)(require(join(file.dir, file.base)));
                 const newReq = new req(this.client, file.name, resolve(join(file.dir, file.base)));
 
                 this.set(file.name, newReq);
