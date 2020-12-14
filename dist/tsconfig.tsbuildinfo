@@ -477,7 +477,7 @@
         "affectsGlobalScope": false
       },
       "../package.json": {
-        "version": "fd130520cffc82b53d4c236539ea0c9713014df88801f5df53978cb5b0144b79",
+        "version": "f01bd06c7f6be9cf467187b637e8919e120cada02eb3461bff11b8a7654a21b9",
         "signature": "b0c638ec6dc777c859a0fa8434a4bfff654735815b734f94e6b6c3972466f983",
         "affectsGlobalScope": true
       },
@@ -607,7 +607,7 @@
         "affectsGlobalScope": false
       },
       "../src/commands/leveling/level.ts": {
-        "version": "9dd413f1e49914e6eba7a36a6dea779c7f5910a9cfd05783a6d633d3e44805ee",
+        "version": "cc12f23f64b112e1f11620cde88e3c11222622540b0fc03f1fc37820ba019c48",
         "signature": "50da6ec64f9bad18ed02dc1d23b40c8d226510653d87321b560a1ec82a3aef91",
         "affectsGlobalScope": false
       },
@@ -627,8 +627,8 @@
         "affectsGlobalScope": false
       },
       "../src/listeners/message.ts": {
-        "version": "e33ae9b228605cd7595cdbb672ce3119861e336d28a4903b85d5c2c0b17285f0",
-        "signature": "470ec54820317a2289d339fd1396cebe1ae9f4d85201303d009742d218afcb67",
+        "version": "f48e99127c2082357cd91af3f58d2b8561360c204800a6a557f458376b66337b",
+        "signature": "02c21e0c93d3d253a053822a1469715288a1d64ba7b1194f70c5a320acb3c7e0",
         "affectsGlobalScope": false
       },
       "../src/listeners/ready.ts": {
@@ -637,7 +637,7 @@
         "affectsGlobalScope": false
       },
       "../package-lock.json": {
-        "version": "7b0c7803f89a49ed568eedfaa1d518e6c599e18eebfbb3e192340165986fba0e",
+        "version": "986801202ae2c11132d937cb5c47f0bfa97f49b6d3a03b343e6753ea7bc144b2",
         "signature": "292c77d5d2a7f5fb7b1158860f4d7e43361d7a8bd7646041000d2f20b2e30e5a",
         "affectsGlobalScope": true
       },
@@ -1449,6 +1449,7 @@
       "../src/commands/general/echo.ts",
       "../src/commands/general/ping.ts",
       "../src/commands/general/say.ts",
+      "../src/commands/leveling/level.ts",
       "../src/eub.ts",
       "../src/handlers/commandhandler.ts",
       "../src/handlers/listenerhandler.ts",
@@ -1465,7 +1466,27 @@
       "../src/lib/utils/fetchers/user.ts",
       "../src/lib/utils/logger.ts",
       "../src/listeners/guildinviteposted.ts",
-      "../src/listeners/message.ts",
+      [
+        "../src/listeners/message.ts",
+        [
+          {
+            "file": "../src/listeners/message.ts",
+            "start": 690,
+            "length": 1,
+            "messageText": "Object is possibly 'null'.",
+            "category": 1,
+            "code": 2531
+          },
+          {
+            "file": "../src/listeners/message.ts",
+            "start": 692,
+            "length": 13,
+            "code": 2339,
+            "category": 1,
+            "messageText": "Property 'createWebhook' does not exist on type 'GuildChannel'."
+          }
+        ]
+      ],
       "../src/listeners/ready.ts",
       "../tsconfig.json"
     ]

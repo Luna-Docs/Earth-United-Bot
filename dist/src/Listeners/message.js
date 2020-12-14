@@ -8,18 +8,31 @@ const pretty_ms_1 = tslib_1.__importDefault(require("pretty-ms"));
 const Listener_1 = tslib_1.__importDefault(require("../Lib/Structures/Listener"));
 class MessageReceived extends Listener_1.default {
     async execute(message) {
+        if (message.content === '!rules') {
+            const t = await this.client.fetch.channel.get('787033568610091071', message.guild);
+            if (!(t instanceof discord_js_1.NewsChannel))
+                return t.createWebhook('Earth United Ruler', {
+                    avatar: this.client.user.displayAvatarURL({ dynamic: true })
+                });
+            message.channel.send(this.client.embed('base', 'Rules of Earth United Network', '')
+                .addField('Rule #1: Respect', 'Be respectful to all staff and non-staff members. This also includes revealing any personal information about another user. This will result in a mute or an immediate ban!', false)
+                .addField('Rule #2: Channel Usage', `Please be mindful of what channel you are in and keep all conversations related to the channel topic. Please use <#787239147441618955> for anything bot related.`, false)
+                .addField('Rule #3: Content', 'Please do not use inappropriate profile pictures, nicknames and emotes (racist, nudity). Breaking this rule could result in a mute, permanent image restriction or ban!', false)
+                .addField('Rule #4: Advertising', 'No advertising other discord servers. Do not DM users with discord invite links unless the user asks for the discord link!', false)
+                .addField('Rule #5: Pinging Staff', 'Do not ping staff members. Use the support ticket system if you have any issues in Minecraft or with the Discord Server!', false));
+        }
         if (message.partial || (message.author.bot))
             return;
-        let messages = this.client.db.get(`${message.author.id}-messages`, 0);
-        let level = this.client.db.get(`${message.author.id}-level`, 1);
-        const title = this.client.db.get(`${message.author.id}-title`, 'Dirt');
+        let messages = await this.client.db.get(`${message.author.id}-messages`, 0);
+        let level = await this.client.db.get(`${message.author.id}-level`, 1);
+        const title = await this.client.db.get(`${message.author.id}-title`, 'Dirt');
         const needed = Math.floor(25 + (20 * level));
         messages++;
         level++;
-        this.client.db.set(`${message.author.id}-messages`, messages);
+        await this.client.db.set(`${message.author.id}-messages`, messages);
         if (messages === needed) {
             this.client.sem(message, 'base', 'Level UP', `Congratulations ${message.member.displayName}, you've leveled up to **level ${level}**!`);
-            this.client.db.set(`${message.author.id}-level`, 1);
+            await this.client.db.set(`${message.author.id}-level`, 1);
         }
         switch (messages) {
             case 250:
