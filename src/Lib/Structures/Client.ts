@@ -27,6 +27,7 @@ export default class EUBClient extends Client {
     prefix: any;
     swearWords: any;
     blacklist: any;
+    punishments: any;
     db: any;
     eco: any;
     punish: any;

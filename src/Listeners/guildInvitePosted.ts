@@ -48,10 +48,19 @@ export default class GuildInvitePosted extends Listener {
             const channel = message.guild.channels.cache.get('787682679331487755');
             if (!(channel instanceof TextChannel)) return;
 
+            this.client.punish.push(`${message.author.id}-punishments`, {
+                user: message.author.id,
+                moderator: this.client.user!.id,
+                type: 'warning',
+                at: Date.now(),
+                reason: `[AUTO MOD] Posted an invite`,
+                case: cache.size 
+            });
+
             message.author.send(warnEmbed);
 
             channel.send(
-                this.client.embed('base', 'Discord Invite Automod', `**User** ${message.author.tag}`)
+                this.client.embed('base', 'Discord Invite Automod', `**User** ${message.author.tag}\n**Action** Warning\n**Reason** [AUTO MOD] Posted an invite`)
                     .addField('Sent In', `${message.channel}`, true)
                     .addField('Sent Content', `${message.content.length >= 1024 ? message.content.slice(0, 1021) + '...' : message.content}`)
             );
@@ -60,7 +69,25 @@ export default class GuildInvitePosted extends Listener {
             cache.size === invKick) &&
             cache.size > invWarn
         ) {
-            
+            const channel = message.guild.channels.cache.get('787682679331487755');
+            if (!(channel instanceof TextChannel)) return;
+
+            this.client.punish.push(`${message.author.id}-punishments`, {
+                user: message.author.id,
+                moderator: this.client.user!.id,
+                type: 'kick',
+                at: Date.now(),
+                reason: `[AUTO MOD] Posted an invite`,
+                case: cache.size 
+            });
+
+            message.author.send(kickEmbed);
+
+            channel.send(
+                this.client.embed('base', 'Discord Invite Automod', `**User** ${message.author.tag}\n**Action** Kick\n**Reason** [AUTO MOD] Posted an invite`)
+                    .addField('Sent In', `${message.channel}`, true)
+                    .addField('Sent Content', `${message.content.length >= 1024 ? message.content.slice(0, 1021) + '...' : message.content}`)
+            );
         }
     }
 }
