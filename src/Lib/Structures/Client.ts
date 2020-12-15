@@ -23,6 +23,11 @@ interface EUBFetchers {
     channel: EUBChannelFetcher;
 }
 
+interface EUBDeleteMessageOptions {
+    timeout?: number;
+    reason?: string;
+}
+
 export default class EUBClient extends Client {
     prefix: any;
     swearWords: any;
@@ -104,31 +109,35 @@ export default class EUBClient extends Client {
         return embed;
     }
 
-    public sem(msg: Message | EUBGuildMessage, type: 'base' | 'bugs' | 'error', title: string, description: string) {
+    public sem(msg: Message | EUBGuildMessage, type: 'base' | 'bugs' | 'error', title: string, description: string, deleteOptions?: EUBDeleteMessageOptions) {
         const embed = new MessageEmbed();
 
-        if (type === 'base') {
+        if (type === 'base')
             embed.setColor('00ff81')
                 .setTitle(title)
                 .setDescription(description)
                 .setFooter(this.time);
-
-            return msg.channel.send(embed);
-        } else if (type === 'bugs') {
+        
+        if (type === 'bugs')
             embed.setColor('777d84')
                 .setTitle(title)
                 .setDescription(description)
                 .setFooter(this.time);
 
-            return msg.channel.send(embed);
-        } else if (type === 'error') {
+        if (type === 'error')
             embed.setColor('ef3b3b')
-                .setTitle(`Error: ${title}`)
+                .setTitle(title)
                 .setDescription(description)
                 .setFooter(this.time);
 
-            return msg.channel.send(embed);
-        }
+            
+        if (!deleteOptions) return msg.channel.send(embed)
+        else if (deleteOptions) return msg.channel.send(embed).then((msg) => {
+            msg.delete({
+                timeout: deleteOptions.timeout, 
+                reason: deleteOptions.reason
+            }) 
+        });
     }
 
     get time(): string {
