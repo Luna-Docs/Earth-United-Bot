@@ -477,8 +477,8 @@
         "affectsGlobalScope": false
       },
       "../package.json": {
-        "version": "f01bd06c7f6be9cf467187b637e8919e120cada02eb3461bff11b8a7654a21b9",
-        "signature": "b0c638ec6dc777c859a0fa8434a4bfff654735815b734f94e6b6c3972466f983",
+        "version": "e872e927c20fd4bf3d9aad276116150f0793e6f1779583d9b151640ff4ea50d5",
+        "signature": "a501f2e182ef6c80d8bfc8926c6d5920849952e57757296a1231c3a03a3f8967",
         "affectsGlobalScope": true
       },
       "../src/lib/types/eub.d.ts": {
@@ -567,8 +567,8 @@
         "affectsGlobalScope": false
       },
       "../src/lib/structures/client.ts": {
-        "version": "890fa1e945ed0ab0969b3a36b7a7ea83cf0ce9ec570433c97c5137621cada40a",
-        "signature": "a168f8d1a4d591ec83257b35349a4bf9e6c90636ebb0b53a819721ce95b16763",
+        "version": "94312cf16fe8cec2ddc76c4c138a5f51c151b84cbd3d22396f019d45ed7f1217",
+        "signature": "4ee431dfb1cf5cb3c626aee07915bc115386dde427bc6862e249655afdd5f230",
         "affectsGlobalScope": false
       },
       "../node_modules/vultrex.db/dist/interfaces/rowdata.d.ts": {
@@ -586,14 +586,29 @@
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
+      "../src/commands/admin/purge.ts": {
+        "version": "d890cde6ea1b7120acdc816fbe3b3d24249c696809725359b972dc2d6a9bc4cd",
+        "signature": "16ea4c4b0d5cc8b4cd05a3a502345e1266bf5e8e831576b91a656c93a5700677",
+        "affectsGlobalScope": false
+      },
       "../src/commands/admin/test.ts": {
         "version": "6268ce8928c63ff61c52dc5ec266e87651166d8b0a5b0903789dc70956d67fdd",
         "signature": "112c4a2c6f323eb38935d5b68d221ba3b38a9e9125c14bdeb3fc91790def965b",
         "affectsGlobalScope": false
       },
+      "../node_modules/parse-ms/index.d.ts": {
+        "version": "82dec7539c20267f7ad926f3ab68c60b2ea0a9538a493386d72928d56e05f5cc",
+        "signature": "82dec7539c20267f7ad926f3ab68c60b2ea0a9538a493386d72928d56e05f5cc",
+        "affectsGlobalScope": false
+      },
+      "../src/commands/economy/daily.ts": {
+        "version": "241f31cf11329461281008d0acb02cc86a79573a504b7c524cd4baceea5b09b7",
+        "signature": "84e812870917ab509d629a7f93c54490c1753034f109e4640c8d38003a3218fa",
+        "affectsGlobalScope": false
+      },
       "../src/commands/general/echo.ts": {
         "version": "d61f3d8851113632654a61d985ce1a71add444c36c5dc943a91481eba95b6f57",
-        "signature": "f6e65ef95c67df83a6ca0246e222e39169e25c9dacd226a17d6e135acec0729a",
+        "signature": "ddc0d42a3345da3bdb92c7ec243da4e90b1d54238e24d5f59946b03541d4a24e",
         "affectsGlobalScope": false
       },
       "../src/commands/general/ping.ts": {
@@ -611,6 +626,16 @@
         "signature": "50da6ec64f9bad18ed02dc1d23b40c8d226510653d87321b560a1ec82a3aef91",
         "affectsGlobalScope": false
       },
+      "../node_modules/pretty-ms/index.d.ts": {
+        "version": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
+        "signature": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
+        "affectsGlobalScope": false
+      },
+      "../src/features/timeparsing.ts": {
+        "version": "91adc0b0826c9cc3c93415fe122b012a176b06d321ce387926ffa95d5943fef4",
+        "signature": "3e899be02e59d511b2d7621884411b91220669c1112585b9872ba2cac30d53d7",
+        "affectsGlobalScope": false
+      },
       "../src/lib/structures/task.ts": {
         "version": "553f96e7b2d1b980b8e81c05d95490a22a6bd0cb4b1d5c2581fe2c570e8f2a7b",
         "signature": "7f3e327c9b9e459c2605d4f05f34c2b9bb0d10d2a6e0142bc278f05522c47e89",
@@ -621,14 +646,9 @@
         "signature": "b9c56b7511dd5c57041466266aa5b7f6211c5c441a0080b144116771cf29f9b4",
         "affectsGlobalScope": false
       },
-      "../node_modules/pretty-ms/index.d.ts": {
-        "version": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
-        "signature": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
-        "affectsGlobalScope": false
-      },
       "../src/listeners/message.ts": {
-        "version": "f48e99127c2082357cd91af3f58d2b8561360c204800a6a557f458376b66337b",
-        "signature": "02c21e0c93d3d253a053822a1469715288a1d64ba7b1194f70c5a320acb3c7e0",
+        "version": "cf1789f820e43096aa3092ab8cfe7677ed51cb0424f6ed685e0c2035efd10454",
+        "signature": "e19c06dd9b588c02921e62c88d38b5fbfbdd7c580c65f3dfb559b052b4f82188",
         "affectsGlobalScope": false
       },
       "../src/listeners/ready.ts": {
@@ -883,8 +903,22 @@
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/winston-transport/index.d.ts"
       ],
+      "../src/commands/admin/purge.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/commands/admin/test.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/economy/daily.ts": [
+        "../node_modules/parse-ms/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
         "../src/lib/structures/client.ts",
         "../src/lib/structures/command.ts",
@@ -921,6 +955,10 @@
         "../node_modules/tslib/tslib.d.ts",
         "../node_modules/vultrex.db/dist/index.d.ts",
         "../src/lib/structures/client.ts"
+      ],
+      "../src/features/timeparsing.ts": [
+        "../node_modules/pretty-ms/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts"
       ],
       "../src/handlers/commandhandler.ts": [
         "../node_modules/@types/klaw/index.d.ts",
@@ -1019,6 +1057,7 @@
         "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/pretty-ms/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
+        "../src/features/timeparsing.ts",
         "../src/lib/structures/command.ts",
         "../src/lib/structures/listener.ts",
         "../src/lib/types/eub.d.ts"
@@ -1236,8 +1275,19 @@
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/winston-transport/index.d.ts"
       ],
+      "../src/commands/admin/purge.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/commands/admin/test.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/economy/daily.ts": [
         "../src/lib/structures/client.ts",
         "../src/lib/structures/command.ts",
         "../src/lib/types/eub.d.ts"
@@ -1393,6 +1443,7 @@
       "../node_modules/dotenv/types/index.d.ts",
       "../node_modules/logform/index.d.ts",
       "../node_modules/moment/ts3.1-typings/moment.d.ts",
+      "../node_modules/parse-ms/index.d.ts",
       "../node_modules/pretty-ms/index.d.ts",
       "../node_modules/tslib/tslib.d.ts",
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
@@ -1445,12 +1496,15 @@
       "../node_modules/winston/lib/winston/transports/index.d.ts",
       "../package-lock.json",
       "../package.json",
+      "../src/commands/admin/purge.ts",
       "../src/commands/admin/test.ts",
+      "../src/commands/economy/daily.ts",
       "../src/commands/general/echo.ts",
       "../src/commands/general/ping.ts",
       "../src/commands/general/say.ts",
       "../src/commands/leveling/level.ts",
       "../src/eub.ts",
+      "../src/features/timeparsing.ts",
       "../src/handlers/commandhandler.ts",
       "../src/handlers/listenerhandler.ts",
       "../src/lib/extensions/message.ts",
@@ -1466,27 +1520,7 @@
       "../src/lib/utils/fetchers/user.ts",
       "../src/lib/utils/logger.ts",
       "../src/listeners/guildinviteposted.ts",
-      [
-        "../src/listeners/message.ts",
-        [
-          {
-            "file": "../src/listeners/message.ts",
-            "start": 690,
-            "length": 1,
-            "messageText": "Object is possibly 'null'.",
-            "category": 1,
-            "code": 2531
-          },
-          {
-            "file": "../src/listeners/message.ts",
-            "start": 692,
-            "length": 13,
-            "code": 2339,
-            "category": 1,
-            "messageText": "Property 'createWebhook' does not exist on type 'GuildChannel'."
-          }
-        ]
-      ],
+      "../src/listeners/message.ts",
       "../src/listeners/ready.ts",
       "../tsconfig.json"
     ]

@@ -17,6 +17,10 @@ interface EUBFetchers {
     role: EUBRoleFetcher;
     channel: EUBChannelFetcher;
 }
+interface EUBDeleteMessageOptions {
+    timeout?: number;
+    reason?: string;
+}
 export default class EUBClient extends Client {
     prefix: any;
     swearWords: any;
@@ -44,7 +48,7 @@ export default class EUBClient extends Client {
     constructor();
     start(token: string | any): Promise<string | void>;
     embed(type: 'base' | 'bugs' | 'error', title: string, description: string): MessageEmbed;
-    sem(msg: Message | EUBGuildMessage, type: 'base' | 'bugs' | 'error', title: string, description: string): Promise<Message> | undefined;
+    sem(msg: Message | EUBGuildMessage, type: 'base' | 'bugs' | 'error', title: string, description: string, deleteOptions?: EUBDeleteMessageOptions): Promise<Message> | Promise<void> | undefined;
     get time(): string;
 }
 export {};

@@ -73,29 +73,32 @@ class EUBClient extends discord_js_1.Client {
                 .setFooter(this.time);
         return embed;
     }
-    sem(msg, type, title, description) {
+    sem(msg, type, title, description, deleteOptions) {
         const embed = new discord_js_1.MessageEmbed();
-        if (type === 'base') {
+        if (type === 'base')
             embed.setColor('00ff81')
                 .setTitle(title)
                 .setDescription(description)
                 .setFooter(this.time);
-            return msg.channel.send(embed);
-        }
-        else if (type === 'bugs') {
+        if (type === 'bugs')
             embed.setColor('777d84')
                 .setTitle(title)
                 .setDescription(description)
                 .setFooter(this.time);
-            return msg.channel.send(embed);
-        }
-        else if (type === 'error') {
+        if (type === 'error')
             embed.setColor('ef3b3b')
-                .setTitle(`Error: ${title}`)
+                .setTitle(title)
                 .setDescription(description)
                 .setFooter(this.time);
+        if (!deleteOptions)
             return msg.channel.send(embed);
-        }
+        else if (deleteOptions)
+            return msg.channel.send(embed).then((msg) => {
+                msg.delete({
+                    timeout: deleteOptions.timeout,
+                    reason: deleteOptions.reason
+                });
+            });
     }
     get time() {
         return moment_1.default().format('MMMM [the] Do [in] YYYY [@] hh:mm A');

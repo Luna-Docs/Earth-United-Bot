@@ -1,8 +1,8 @@
-/// <reference types="discord.js" />
 import Command from "../../Lib/Structures/Command";
 import { EUBGuildMessage } from "../../Lib/Types/EUB";
 import Cluster from "../../Lib/Structures/Client";
-export default class Echo extends Command {
+import { Message } from "discord.js";
+export default class Purge extends Command {
     constructor(client: Cluster);
-    execute(message: EUBGuildMessage, args: string[]): Promise<void | import("discord.js").Message | undefined>;
+    execute(message: EUBGuildMessage, args: string[]): Promise<void | Message>;
 }

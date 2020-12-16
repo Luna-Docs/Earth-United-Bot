@@ -29,6 +29,7 @@
         "klaw": "^3.0.0",
         "moment": "^2.29.1",
         "node-fetch": "^2.6.1",
+        "parse-ms": "^2.1.0",
         "pretty-ms": "^7.0.1",
         "sqlite": "^4.0.18",
         "vultrex.db": "^1.4.1",

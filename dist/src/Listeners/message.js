@@ -6,21 +6,11 @@ const discord_js_1 = require("discord.js");
 const moment_1 = tslib_1.__importDefault(require("moment"));
 const pretty_ms_1 = tslib_1.__importDefault(require("pretty-ms"));
 const Listener_1 = tslib_1.__importDefault(require("../Lib/Structures/Listener"));
+const TimeParsing_1 = tslib_1.__importDefault(require("../Features/TimeParsing"));
 class MessageReceived extends Listener_1.default {
     async execute(message) {
-        if (message.content === '!rules') {
-            const t = await this.client.fetch.channel.get('787033568610091071', message.guild);
-            if (!(t instanceof discord_js_1.NewsChannel))
-                return t.createWebhook('Earth United Ruler', {
-                    avatar: this.client.user.displayAvatarURL({ dynamic: true })
-                });
-            message.channel.send(this.client.embed('base', 'Rules of Earth United Network', '')
-                .addField('Rule #1: Respect', 'Be respectful to all staff and non-staff members. This also includes revealing any personal information about another user. This will result in a mute or an immediate ban!', false)
-                .addField('Rule #2: Channel Usage', `Please be mindful of what channel you are in and keep all conversations related to the channel topic. Please use <#787239147441618955> for anything bot related.`, false)
-                .addField('Rule #3: Content', 'Please do not use inappropriate profile pictures, nicknames and emotes (racist, nudity). Breaking this rule could result in a mute, permanent image restriction or ban!', false)
-                .addField('Rule #4: Advertising', 'No advertising other discord servers. Do not DM users with discord invite links unless the user asks for the discord link!', false)
-                .addField('Rule #5: Pinging Staff', 'Do not ping staff members. Use the support ticket system if you have any issues in Minecraft or with the Discord Server!', false));
-        }
+        if (message.content.startsWith('!dur'))
+            return this.client.sem(message, 'base', 'Time Testing', `**Account Created** ${TimeParsing_1.default(Math.abs(message.author.createdTimestamp))}`);
         if (message.partial || (message.author.bot))
             return;
         let messages = await this.client.db.get(`${message.author.id}-messages`, 0);
