@@ -6,11 +6,8 @@ const discord_js_1 = require("discord.js");
 const moment_1 = tslib_1.__importDefault(require("moment"));
 const pretty_ms_1 = tslib_1.__importDefault(require("pretty-ms"));
 const Listener_1 = tslib_1.__importDefault(require("../Lib/Structures/Listener"));
-const TimeParsing_1 = tslib_1.__importDefault(require("../Features/TimeParsing"));
 class MessageReceived extends Listener_1.default {
     async execute(message) {
-        if (message.content.startsWith('!dur'))
-            return this.client.sem(message, 'base', 'Time Testing', `**Account Created** ${TimeParsing_1.default(Math.abs(message.author.createdTimestamp))}`);
         if (message.partial || (message.author.bot))
             return;
         let messages = await this.client.db.get(`${message.author.id}-messages`, 0);
@@ -18,9 +15,8 @@ class MessageReceived extends Listener_1.default {
         const title = await this.client.db.get(`${message.author.id}-title`, 'Dirt');
         const needed = Math.floor(25 + (20 * level));
         messages++;
-        level++;
-        await this.client.db.set(`${message.author.id}-messages`, messages);
         if (messages === needed) {
+            level++;
             this.client.sem(message, 'base', 'Level UP', `Congratulations ${message.member.displayName}, you've leveled up to **level ${level}**!`);
             await this.client.db.set(`${message.author.id}-level`, 1);
         }
@@ -78,6 +74,7 @@ class MessageReceived extends Listener_1.default {
                 this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
                 break;
         }
+        await this.client.db.set(`${message.author.id}-messages`, messages);
         if (message.channel.type === 'dm')
             return this.handleDM(message);
         return this.handleGuild(message);

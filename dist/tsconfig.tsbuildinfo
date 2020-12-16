@@ -647,8 +647,8 @@
         "affectsGlobalScope": false
       },
       "../src/listeners/message.ts": {
-        "version": "cf1789f820e43096aa3092ab8cfe7677ed51cb0424f6ed685e0c2035efd10454",
-        "signature": "e19c06dd9b588c02921e62c88d38b5fbfbdd7c580c65f3dfb559b052b4f82188",
+        "version": "c9a4697fc9ff3d87acdcf06ba7dcb0cecc49858dfcd7585c8189700cd115e238",
+        "signature": "470ec54820317a2289d339fd1396cebe1ae9f4d85201303d009742d218afcb67",
         "affectsGlobalScope": false
       },
       "../src/listeners/ready.ts": {

@@ -10,10 +10,6 @@ import Time from "../Features/TimeParsing";
 
 export default class MessageReceived extends Listener {
     public async execute(message: Message | EUBGuildMessage) {
-        if (message.content.startsWith('!dur')) 
-            return this.client.sem(message, 'base', 'Time Testing',
-            `**Account Created** ${Time(Math.abs(message.author.createdTimestamp))}`)
-
         if (message.partial || (message.author!.bot)) return;
 
         let messages = await this.client.db.get(`${message.author.id}-messages`, 0);
@@ -23,11 +19,9 @@ export default class MessageReceived extends Listener {
         const needed = Math.floor(25 + (20 * level));
 
         messages++;
-        level++;
-
-        await this.client.db.set(`${message.author.id}-messages`, messages);
 
         if (messages === needed) {
+            level++;
             this.client.sem(message, 'base', 'Level UP', 
             `Congratulations ${message.member!.displayName}, you've leveled up to **level ${level}**!`);
 
@@ -113,6 +107,8 @@ export default class MessageReceived extends Listener {
                 `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
                 break;
         }
+
+        await this.client.db.set(`${message.author.id}-messages`, messages);
 
         if (message.channel.type === 'dm')
             return this.handleDM(message as Message);
