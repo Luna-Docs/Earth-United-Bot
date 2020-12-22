@@ -656,6 +656,11 @@
         "signature": "67aa846b5da75f53bbc00c4bc1e45b61e1f7b44b05939fd90eafb38ee8651401",
         "affectsGlobalScope": false
       },
+      "../src/features/waiter.ts": {
+        "version": "43367fe40dba3b63c69d0a7e57afaa07a4e0358ef9406b5871cd70c3236c58be",
+        "signature": "c347f4437de935d525c3ac9d65ac6d42901ce3a9df09307cdbdf9b34cd64be42",
+        "affectsGlobalScope": false
+      },
       "../src/lib/structures/task.ts": {
         "version": "553f96e7b2d1b980b8e81c05d95490a22a6bd0cb4b1d5c2581fe2c570e8f2a7b",
         "signature": "7f3e327c9b9e459c2605d4f05f34c2b9bb0d10d2a6e0142bc278f05522c47e89",
@@ -664,6 +669,11 @@
       "../src/listeners/guildinviteposted.ts": {
         "version": "7bd9200ece10db5c0640cbcb363190b7b0ce1c8b9baf1e51066f505fe39b7b52",
         "signature": "b9c56b7511dd5c57041466266aa5b7f6211c5c441a0080b144116771cf29f9b4",
+        "affectsGlobalScope": false
+      },
+      "../src/listeners/guildmemberadd.ts": {
+        "version": "cba8b74806370a37402cbf4bdc1dc9130e83a1f08d3999a03fcc111592e8dfee",
+        "signature": "802b3fce3af096d7656efaea871ff96a037a08c118be80a853ee7d58d1460355",
         "affectsGlobalScope": false
       },
       "../src/listeners/message.ts": {
@@ -713,7 +723,6 @@
       "resolveJsonModule": true,
       "esModuleInterop": true,
       "project": "../tsconfig.json",
-      "watch": true,
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
@@ -1007,6 +1016,9 @@
         "../src/features/timeparsing.ts",
         "../src/lib/structures/client.ts"
       ],
+      "../src/features/waiter.ts": [
+        "../node_modules/tslib/tslib.d.ts"
+      ],
       "../src/handlers/commandhandler.ts": [
         "../node_modules/@types/klaw/index.d.ts",
         "../node_modules/@types/node/path.d.ts",
@@ -1097,6 +1109,12 @@
         "../node_modules/tslib/tslib.d.ts",
         "../src/lib/structures/listener.ts",
         "../src/lib/types/eub.d.ts"
+      ],
+      "../src/listeners/guildmemberadd.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/features/waiter.ts",
+        "../src/lib/structures/listener.ts"
       ],
       "../src/listeners/message.ts": [
         "../node_modules/@types/node/util.d.ts",
@@ -1446,6 +1464,10 @@
         "../src/lib/structures/listener.ts",
         "../src/lib/types/eub.d.ts"
       ],
+      "../src/listeners/guildmemberadd.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/listener.ts"
+      ],
       "../src/listeners/message.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
         "../src/lib/structures/listener.ts",
@@ -1575,6 +1597,7 @@
       "../src/features/presencesearch.ts",
       "../src/features/timeparsing.ts",
       "../src/features/userinfo.ts",
+      "../src/features/waiter.ts",
       "../src/handlers/commandhandler.ts",
       "../src/handlers/listenerhandler.ts",
       "../src/lib/extensions/message.ts",
@@ -1590,6 +1613,7 @@
       "../src/lib/utils/fetchers/user.ts",
       "../src/lib/utils/logger.ts",
       "../src/listeners/guildinviteposted.ts",
+      "../src/listeners/guildmemberadd.ts",
       "../src/listeners/message.ts",
       "../src/listeners/ready.ts",
       "../tsconfig.json"

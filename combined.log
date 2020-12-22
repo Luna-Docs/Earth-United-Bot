@@ -696,3 +696,9 @@
 {"message":"Loaded 3 Events in 41ms","level":"info","timestamp":"12-22-2020 | 11:12:48 AM"}
 {"message":"Loaded 10 Commands in 61ms","level":"info","timestamp":"12-22-2020 | 11:12:48 AM"}
 {"message":"Client connected as user Earth United Bot#7516","level":"info","timestamp":"12-22-2020 | 11:12:48 AM"}
+{"message":"Main Database Connected!","level":"info","timestamp":"12-22-2020 | 11:13:39 AM"}
+{"message":"Economy Database Connected!","level":"info","timestamp":"12-22-2020 | 11:13:39 AM"}
+{"message":"Punishments Database Connected!","level":"info","timestamp":"12-22-2020 | 11:13:39 AM"}
+{"message":"Loaded 3 Events in 39ms","level":"info","timestamp":"12-22-2020 | 11:13:39 AM"}
+{"message":"Loaded 10 Commands in 56ms","level":"info","timestamp":"12-22-2020 | 11:13:39 AM"}
+{"message":"Client connected as user Earth United Bot#7516","level":"info","timestamp":"12-22-2020 | 11:13:40 AM"}

@@ -1,0 +1,1 @@
+export = (time_to_wait: number) => new Promise((r) => setTimeout(r, time_to_wait));
