@@ -567,8 +567,8 @@
         "affectsGlobalScope": false
       },
       "../src/lib/structures/client.ts": {
-        "version": "94312cf16fe8cec2ddc76c4c138a5f51c151b84cbd3d22396f019d45ed7f1217",
-        "signature": "4ee431dfb1cf5cb3c626aee07915bc115386dde427bc6862e249655afdd5f230",
+        "version": "80379bf858e1896aa9c1cfae2fc234fb5af0d9abe84d78e3c277044182542508",
+        "signature": "a5f743c76df9f45d7c4cfd85c27091f04ccbf6879edff37325dd480872e40e50",
         "affectsGlobalScope": false
       },
       "../node_modules/vultrex.db/dist/interfaces/rowdata.d.ts": {
@@ -582,7 +582,7 @@
         "affectsGlobalScope": false
       },
       "../src/eub.ts": {
-        "version": "19cdebf7010d7647ebcaba0c926f9e3f904b3263ba37092de4df6cf90f94bc5b",
+        "version": "d8690569362db17029b55142d5f869a9987b930995513ae30a7d271e050388d7",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -591,9 +591,9 @@
         "signature": "16ea4c4b0d5cc8b4cd05a3a502345e1266bf5e8e831576b91a656c93a5700677",
         "affectsGlobalScope": false
       },
-      "../src/commands/admin/test.ts": {
-        "version": "6268ce8928c63ff61c52dc5ec266e87651166d8b0a5b0903789dc70956d67fdd",
-        "signature": "112c4a2c6f323eb38935d5b68d221ba3b38a9e9125c14bdeb3fc91790def965b",
+      "../src/commands/admin/search.ts": {
+        "version": "d0e6bbece4a3ade4aa751aa6ce24a0aa5b4b97502b2ef32a14fc954baf12c2f7",
+        "signature": "33e219d5a873bbe156b06cd3a0b8c1b67283d79f65478e63019a9585401ddeb9",
         "affectsGlobalScope": false
       },
       "../node_modules/parse-ms/index.d.ts": {
@@ -607,23 +607,23 @@
         "affectsGlobalScope": false
       },
       "../src/commands/general/echo.ts": {
-        "version": "d61f3d8851113632654a61d985ce1a71add444c36c5dc943a91481eba95b6f57",
-        "signature": "ddc0d42a3345da3bdb92c7ec243da4e90b1d54238e24d5f59946b03541d4a24e",
+        "version": "2c4c76198a486db874e9299f4155e27e559aeb6b32e0632449b22b42eee1b5fd",
+        "signature": "1095b072c1fc1edde063ebaa8d6617e051380c3bf16a8f958c26cf270ac8966c",
         "affectsGlobalScope": false
       },
       "../src/commands/general/ping.ts": {
-        "version": "e74cf3eefe20070500f6c315d6741b275f7ee1aa016ba4b742c9eee8322e5f8a",
+        "version": "e525ddcf037e20dc213923f6e7c5992eccb7a0ad0e361437d8fe3ff1989d5652",
         "signature": "39c6d868ba0443a65699763d0a2b356ca02ce19033725ee4eeccc60b21675b05",
         "affectsGlobalScope": false
       },
       "../src/commands/general/say.ts": {
-        "version": "2a9c9496789b69f6d703dcf1e17949feaa2c5251050346e2d7901cda8309f992",
-        "signature": "7cd43ada4457ed424a688c9af4557a73c73df7bd00f0ed556e9d9368b7d395c4",
+        "version": "b5137a5d5332b9a95ed55c128a377d7689dd306a0995f9d4b9a3a7f5d449e920",
+        "signature": "8a2807da26667b801446a288c4b4746f6445eef64c5c6eeba318273ff5701def",
         "affectsGlobalScope": false
       },
-      "../src/commands/leveling/level.ts": {
-        "version": "cc12f23f64b112e1f11620cde88e3c11222622540b0fc03f1fc37820ba019c48",
-        "signature": "50da6ec64f9bad18ed02dc1d23b40c8d226510653d87321b560a1ec82a3aef91",
+      "../src/features/presencesearch.ts": {
+        "version": "6876097134e1660c2ecef68363b98c49b15f6e6202756b960e0d11bb4c71f85c",
+        "signature": "c1ed2473aafb8ca2a91433072e11a6bb6009f2537c160b4c3107d58d1453883e",
         "affectsGlobalScope": false
       },
       "../node_modules/pretty-ms/index.d.ts": {
@@ -632,8 +632,28 @@
         "affectsGlobalScope": false
       },
       "../src/features/timeparsing.ts": {
-        "version": "91adc0b0826c9cc3c93415fe122b012a176b06d321ce387926ffa95d5943fef4",
+        "version": "f76c24be3028b043d29bec3f683fc88b0c13e36a9d51b8e289a64ebebb1aebf6",
         "signature": "3e899be02e59d511b2d7621884411b91220669c1112585b9872ba2cac30d53d7",
+        "affectsGlobalScope": false
+      },
+      "../src/commands/general/userinfo.ts": {
+        "version": "1e52d2f24dff54144075ae656c3adb51834b22a7d633f40b89f3d5543bd94eff",
+        "signature": "794f0cec62791aca569c36d692ff225d982b906a400a11371bdcf1ba552fb721",
+        "affectsGlobalScope": false
+      },
+      "../src/commands/leveling/level.ts": {
+        "version": "cc12f23f64b112e1f11620cde88e3c11222622540b0fc03f1fc37820ba019c48",
+        "signature": "50da6ec64f9bad18ed02dc1d23b40c8d226510653d87321b560a1ec82a3aef91",
+        "affectsGlobalScope": false
+      },
+      "../src/features/leveling.ts": {
+        "version": "1eecaeca0429ccb3394779523e0dd7fe446a4da6248ca5fe53055aeb3fc51c8c",
+        "signature": "3dc30c60f45fa773178fe7a2d6a5d3ab5a8b6d2907f2e444f2fe5921b0823ab5",
+        "affectsGlobalScope": false
+      },
+      "../src/features/userinfo.ts": {
+        "version": "1cac22d8801b38d248c4fa62ec4f0163da34c7d4c0e043b6087cce31bef6c091",
+        "signature": "67aa846b5da75f53bbc00c4bc1e45b61e1f7b44b05939fd90eafb38ee8651401",
         "affectsGlobalScope": false
       },
       "../src/lib/structures/task.ts": {
@@ -647,12 +667,12 @@
         "affectsGlobalScope": false
       },
       "../src/listeners/message.ts": {
-        "version": "c9a4697fc9ff3d87acdcf06ba7dcb0cecc49858dfcd7585c8189700cd115e238",
-        "signature": "470ec54820317a2289d339fd1396cebe1ae9f4d85201303d009742d218afcb67",
+        "version": "84089a9672ca07315b0070a9f019a20bb42aff00e3f5dc3901d9ebfd73ec868c",
+        "signature": "e19c06dd9b588c02921e62c88d38b5fbfbdd7c580c65f3dfb559b052b4f82188",
         "affectsGlobalScope": false
       },
       "../src/listeners/ready.ts": {
-        "version": "40df12855fa4ffd6d7638b24eab07bd81a0624563ea5ed5750739413ab0e61ea",
+        "version": "8678da5b1da1320a130b9f677e3f14e0ea48cd8ec3324cf5e5f88a1508b07e3b",
         "signature": "129b565b4274fd921dc50aca5dfed492981ad983ab557fd0a1fc8c2e33363847",
         "affectsGlobalScope": false
       },
@@ -910,8 +930,7 @@
         "../src/lib/structures/command.ts",
         "../src/lib/types/eub.d.ts"
       ],
-      "../src/commands/admin/test.ts": [
-        "../node_modules/discord.js/typings/index.d.ts",
+      "../src/commands/admin/search.ts": [
         "../node_modules/tslib/tslib.d.ts",
         "../src/lib/structures/client.ts",
         "../src/lib/structures/command.ts",
@@ -925,6 +944,7 @@
         "../src/lib/types/eub.d.ts"
       ],
       "../src/commands/general/echo.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
         "../src/lib/structures/client.ts",
         "../src/lib/structures/command.ts",
@@ -938,7 +958,17 @@
         "../src/lib/types/eub.d.ts"
       ],
       "../src/commands/general/say.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/general/userinfo.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/features/presencesearch.ts",
+        "../src/features/timeparsing.ts",
         "../src/lib/structures/client.ts",
         "../src/lib/structures/command.ts",
         "../src/lib/types/eub.d.ts"
@@ -956,9 +986,26 @@
         "../node_modules/vultrex.db/dist/index.d.ts",
         "../src/lib/structures/client.ts"
       ],
+      "../src/features/leveling.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/features/presencesearch.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts"
+      ],
       "../src/features/timeparsing.ts": [
         "../node_modules/pretty-ms/index.d.ts",
         "../node_modules/tslib/tslib.d.ts"
+      ],
+      "../src/features/userinfo.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/features/presencesearch.ts",
+        "../src/features/timeparsing.ts",
+        "../src/lib/structures/client.ts"
       ],
       "../src/handlers/commandhandler.ts": [
         "../node_modules/@types/klaw/index.d.ts",
@@ -1057,7 +1104,8 @@
         "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/pretty-ms/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
-        "../src/features/timeparsing.ts",
+        "../src/features/leveling.ts",
+        "../src/features/presencesearch.ts",
         "../src/lib/structures/command.ts",
         "../src/lib/structures/listener.ts",
         "../src/lib/types/eub.d.ts"
@@ -1281,7 +1329,7 @@
         "../src/lib/structures/command.ts",
         "../src/lib/types/eub.d.ts"
       ],
-      "../src/commands/admin/test.ts": [
+      "../src/commands/admin/search.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
         "../src/lib/structures/client.ts",
         "../src/lib/structures/command.ts",
@@ -1309,10 +1357,28 @@
         "../src/lib/structures/command.ts",
         "../src/lib/types/eub.d.ts"
       ],
+      "../src/commands/general/userinfo.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/commands/leveling/level.ts": [
         "../src/lib/structures/client.ts",
         "../src/lib/structures/command.ts",
         "../src/lib/types/eub.d.ts"
+      ],
+      "../src/features/leveling.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/features/presencesearch.ts": [
+        "../node_modules/discord.js/typings/index.d.ts"
+      ],
+      "../src/features/userinfo.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts"
       ],
       "../src/handlers/commandhandler.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
@@ -1497,14 +1563,18 @@
       "../package-lock.json",
       "../package.json",
       "../src/commands/admin/purge.ts",
-      "../src/commands/admin/test.ts",
+      "../src/commands/admin/search.ts",
       "../src/commands/economy/daily.ts",
       "../src/commands/general/echo.ts",
       "../src/commands/general/ping.ts",
       "../src/commands/general/say.ts",
+      "../src/commands/general/userinfo.ts",
       "../src/commands/leveling/level.ts",
       "../src/eub.ts",
+      "../src/features/leveling.ts",
+      "../src/features/presencesearch.ts",
       "../src/features/timeparsing.ts",
+      "../src/features/userinfo.ts",
       "../src/handlers/commandhandler.ts",
       "../src/handlers/listenerhandler.ts",
       "../src/lib/extensions/message.ts",

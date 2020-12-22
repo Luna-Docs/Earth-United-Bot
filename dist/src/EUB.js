@@ -36,7 +36,7 @@ db.connect().then(async () => {
             client.blacklist = await client.db.get(`blacklisted`, []);
             client.punishments = await client.punish.get(`${(new discord_js_1.User(client, {}).id)}-punishments`, []);
             await client.logger.info('Punishments Database Connected!');
-            client.start("Nzg3MDQxMDk3MDMzMDU2MjY2.X9PLJA.QhoJko7ecyVhnLRTbQ9C85woOZI");
+            client.start("Nzg3MDQxMDk3MDMzMDU2MjY2.X9PLJA.PsJ_FotitqqQDOtViQXnZe284GY");
         });
     });
 });

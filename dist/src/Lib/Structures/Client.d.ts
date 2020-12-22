@@ -21,6 +21,15 @@ interface EUBDeleteMessageOptions {
     timeout?: number;
     reason?: string;
 }
+declare enum EUBDiscordColors {
+    BASE = "00ff81",
+    WARN = "f0f725",
+    MUTE = "2560f7",
+    KICK = "f79525",
+    BAN = "f73625",
+    BUGS = "777d84",
+    ERROR = "f2594b"
+}
 export default class EUBClient extends Client {
     prefix: any;
     swearWords: any;
@@ -30,6 +39,7 @@ export default class EUBClient extends Client {
     eco: any;
     punish: any;
     capitalise: (str: string) => string;
+    colors: typeof EUBDiscordColors;
     cooldown: Collection<string, any>;
     aliases: Collection<string, string>;
     commands: CommandHandler;
@@ -47,8 +57,8 @@ export default class EUBClient extends Client {
     owners: string;
     constructor();
     start(token: string | any): Promise<string | void>;
-    embed(type: 'base' | 'bugs' | 'error', title: string, description: string): MessageEmbed;
-    sem(msg: Message | EUBGuildMessage, type: 'base' | 'bugs' | 'error', title: string, description: string, deleteOptions?: EUBDeleteMessageOptions): Promise<Message> | Promise<void> | undefined;
+    embed(type: 'base' | 'warn' | 'mute' | 'kick' | 'ban' | 'bugs' | 'error', title: string, description: string): MessageEmbed;
+    sem(msg: Message | EUBGuildMessage, type: 'base' | 'warn' | 'mute' | 'kick' | 'ban' | 'bugs' | 'error', title: string, description: string, deleteOptions?: EUBDeleteMessageOptions): Promise<void> | Promise<Message> | undefined;
     get time(): string;
 }
 export {};

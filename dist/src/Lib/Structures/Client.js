@@ -13,6 +13,16 @@ const GuildMember_1 = tslib_1.__importDefault(require("../Utils/Fetchers/GuildMe
 const Message_1 = tslib_1.__importDefault(require("../Utils/Fetchers/Message"));
 const Role_1 = tslib_1.__importDefault(require("../Utils/Fetchers/Role"));
 const Channel_1 = tslib_1.__importDefault(require("../Utils/Fetchers/Channel"));
+var EUBDiscordColors;
+(function (EUBDiscordColors) {
+    EUBDiscordColors["BASE"] = "00ff81";
+    EUBDiscordColors["WARN"] = "f0f725";
+    EUBDiscordColors["MUTE"] = "2560f7";
+    EUBDiscordColors["KICK"] = "f79525";
+    EUBDiscordColors["BAN"] = "f73625";
+    EUBDiscordColors["BUGS"] = "777d84";
+    EUBDiscordColors["ERROR"] = "f2594b";
+})(EUBDiscordColors || (EUBDiscordColors = {}));
 class EUBClient extends discord_js_1.Client {
     constructor() {
         super({
@@ -28,6 +38,7 @@ class EUBClient extends discord_js_1.Client {
             }
         });
         this.capitalise = (str) => str.split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' ');
+        this.colors = EUBDiscordColors;
         this.cooldown = new discord_js_1.Collection();
         this.aliases = new discord_js_1.Collection();
         this.commands = new CommandHandler_1.default(this);
@@ -55,41 +66,46 @@ class EUBClient extends discord_js_1.Client {
         return await super.login(token).catch((err) => this.logger.error(err));
     }
     embed(type, title, description) {
-        const embed = new discord_js_1.MessageEmbed();
+        const embed = new discord_js_1.MessageEmbed()
+            .setTitle(title)
+            .setDescription(description)
+            .setFooter(this.time);
         if (type === 'base')
-            embed.setColor('00ff81')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
+            embed.setColor(this.colors.BASE);
+        if (type === 'warn')
+            embed.setColor(this.colors.WARN);
+        if (type === 'mute')
+            embed.setColor(this.colors.MUTE);
+        if (type === 'kick')
+            embed.setColor(this.colors.KICK);
+        if (type === 'ban')
+            embed.setColor(this.colors.BAN);
         if (type === 'bugs')
-            embed.setColor('777d84')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
+            embed.setColor(this.colors.BUGS);
         if (type === 'error')
-            embed.setColor('ef3b3b')
-                .setTitle(`Error: ${title}`)
-                .setDescription(description)
-                .setFooter(this.time);
+            embed.setColor(this.colors.ERROR);
         return embed;
     }
     sem(msg, type, title, description, deleteOptions) {
-        const embed = new discord_js_1.MessageEmbed();
+        const embed = new discord_js_1.MessageEmbed()
+            .setTitle(title)
+            .setDescription(description)
+            .setFooter(this.time);
+        ;
         if (type === 'base')
-            embed.setColor('00ff81')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
+            embed.setColor(this.colors.BASE);
+        if (type === 'warn')
+            embed.setColor(this.colors.WARN);
+        if (type === 'mute')
+            embed.setColor(this.colors.MUTE);
+        if (type === 'kick')
+            embed.setColor(this.colors.KICK);
+        if (type === 'ban')
+            embed.setColor(this.colors.BAN);
         if (type === 'bugs')
-            embed.setColor('777d84')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
+            embed.setColor(this.colors.BUGS);
         if (type === 'error')
-            embed.setColor('ef3b3b')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
+            embed.setColor(this.colors.ERROR);
         if (!deleteOptions)
             return msg.channel.send(embed);
         else if (deleteOptions)

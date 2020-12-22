@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const Command_1 = tslib_1.__importDefault(require("../../Lib/Structures/Command"));
+const discord_js_1 = require("discord.js");
 class Echo extends Command_1.default {
     constructor(client) {
         super(client, {
@@ -33,8 +34,27 @@ class Echo extends Command_1.default {
     }
     async execute(message, args) {
         const params = args.join(' ');
-        return this.client.sem(message, 'base', `Echo | Author: ${message.author.username}`, params);
+        if (!params || !args.length) {
+            const col = await message.channel.createMessageCollector((msg) => msg.member.id === message.author.id, {
+                time: 10000
+            });
+            const ms = await this.client.sem(message, 'error', 'An error has occurred', [
+                `You didn't provide any text that I should say/send in chat.`,
+                `Type the message you would like me to say in chat.`
+            ].join('\n'), {
+                timeout: 10000,
+                reason: 'Collector expired'
+            });
+            col
+                .on('collect', async (msg) => {
+                if (ms instanceof discord_js_1.Message)
+                    await ms.delete();
+                return this.client.sem(message, 'base', `Echo | Author: ${message.author.tag}`, msg.content);
+            });
+        }
+        if (params || args.length > 0)
+            return this.client.sem(message, 'base', `Echo | Author: ${message.author.username}`, params);
     }
 }
 exports.default = Echo;
-//# sourceMappingURL=echo.js.map
+//# sourceMappingURL=Echo.js.map

@@ -6,109 +6,20 @@ import PMS from "pretty-ms";
 import Listener from "../Lib/Structures/Listener";
 import { EUBGuildMessage } from "../Lib/Types/EUB";
 import Command from "../Lib/Structures/Command"
-import Time from "../Features/TimeParsing";
+import Pres from "../Features/PresenceSearch";
+import Leveling from "../Features/Leveling";
 
 export default class MessageReceived extends Listener {
     public async execute(message: Message | EUBGuildMessage) {
         if (message.partial || (message.author!.bot)) return;
 
-        let messages = await this.client.db.get(`${message.author.id}-messages`, 0);
-        
-        let level = await this.client.db.get(`${message.author.id}-level`, 1);
-        const title = await this.client.db.get(`${message.author.id}-title`, 'Dirt');
-        const needed = Math.floor(25 + (20 * level));
+        if(message.content.startsWith('!pres')) return message.channel.send([
+            `**Name** ${(await Pres('PLAYING', message.member!))!.name}`,
+            `**Details** ${(await Pres('PLAYING', message.member!))!.details}`,
+            `**State** ${(await Pres('PLAYING', message.member!))!.state}`
+        ].join('\n'));
 
-        messages++;
-
-        if (messages === needed) {
-            level++;
-            this.client.sem(message, 'base', 'Level UP', 
-            `Congratulations ${message.member!.displayName}, you've leveled up to **level ${level}**!`);
-
-            await this.client.db.set(`${message.author.id}-level`, 1);
-        }
-
-        switch (messages) {
-            case 250:
-                this.client.db.set(`${message.author.id}-title`, 'Wood');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 500:
-                this.client.db.set(`${message.author.id}-title`, 'Stone');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 1000:
-                this.client.db.set(`${message.author.id}-title`, 'Iron');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 2000:
-                this.client.db.set(`${message.author.id}-title`, 'Lapis Lazuli');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 4000:
-                this.client.db.set(`${message.author.id}-title`, 'Redstone');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 8000:
-                this.client.db.set(`${message.author.id}-title`, 'Gold');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 16000:
-                this.client.db.set(`${message.author.id}-title`, 'Diamond');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 32000:
-                this.client.db.set(`${message.author.id}-title`, 'Emerald');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 64000:
-                this.client.db.set(`${message.author.id}-title`, 'Ruby');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 128000:
-                this.client.db.set(`${message.author.id}-title`, 'Sapphire');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 256000:
-                this.client.db.set(`${message.author.id}-title`, 'Platinum');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 512000:
-                this.client.db.set(`${message.author.id}-title`, 'Titanium');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-
-            case 1000000:
-                this.client.db.set(`${message.author.id}-title`, 'Earth United');
-                this.client.sem(message, 'base', 'New Title', 
-                `Congratulations ${message.member!.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-        }
-
-        await this.client.db.set(`${message.author.id}-messages`, messages);
+        Leveling(message, this.client);
 
         if (message.channel.type === 'dm')
             return this.handleDM(message as Message);
@@ -164,7 +75,7 @@ export default class MessageReceived extends Listener {
         // ) return;
 
         if (!message.content.startsWith(this.client.prefix[message.guild!.id])) return;
-
+        
         const args: string[] = message.content.slice(this.client.prefix[message.guild!.id].length).trim().split(/ +/g);
         const cmd: string = args.shift()!.toLowerCase();
         let command: Command | undefined = await this.client.commands.find((c) => c.name === cmd) ||
@@ -173,6 +84,8 @@ export default class MessageReceived extends Listener {
         if (!command) return console.error;
 
         if (typeof command === undefined) return console.log('Not working');
+
+        message.delete({reason: `[EUB | Execution] Ran ${this.client.capitalise(command.name)} for ${message.author.tag}`});
 
         // if (!message.guild.me!.permissions.has(command.permissions.client.server, true))
         //     return message.channel.send(

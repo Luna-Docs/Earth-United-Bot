@@ -3,10 +3,9 @@ const tslib_1 = require("tslib");
 const pretty_ms_1 = tslib_1.__importDefault(require("pretty-ms"));
 module.exports = (Ms) => {
     const ms = pretty_ms_1.default(Ms, { verbose: true, secondsDecimalDigits: 0 });
-    let time = ``;
     // ms.years ? time += `${ms.years} year${ms.years > 1 ? 's' : ''} ` : ``;
     // ms.months ? time += `${ms.months} month${ms.months > 1 ? 's' : ''} ` : ``;
-    // //ms.weeks ? time += `${ms.weeks} week${ms.weeks > 1 ? 's' : ''} ` : ``;
+    // ms.weeks ? time += `${ms.weeks} week${ms.weeks > 1 ? 's' : ''} ` : ``;
     // ms.days ? time += `${ms.days} day${ms.days > 1 ? 's' : ''} ` : ``;
     // ms.hours ? time += `${ms.hours} hour${ms.hours > 1 ? 's' : ''} ` : ``;
     // ms.minutes ? time += `${ms.minutes} minute${ms.minutes > 1 ? 's' : ''} ` : ``;
@@ -32,7 +31,6 @@ module.exports = (Ms) => {
     // // Seconds
     // else if (ms.seconds < 60 && ms.seconds >= 2) time += `${ms.seconds} seconds`
     // else if (ms.seconds < 2) time += `${ms.seconds} seconds`;
-    time = `${ms}`;
-    return time;
+    return ms;
 };
 //# sourceMappingURL=TimeParsing.js.map

@@ -6,75 +6,19 @@ const discord_js_1 = require("discord.js");
 const moment_1 = tslib_1.__importDefault(require("moment"));
 const pretty_ms_1 = tslib_1.__importDefault(require("pretty-ms"));
 const Listener_1 = tslib_1.__importDefault(require("../Lib/Structures/Listener"));
+const PresenceSearch_1 = tslib_1.__importDefault(require("../Features/PresenceSearch"));
+const Leveling_1 = tslib_1.__importDefault(require("../Features/Leveling"));
 class MessageReceived extends Listener_1.default {
     async execute(message) {
         if (message.partial || (message.author.bot))
             return;
-        let messages = await this.client.db.get(`${message.author.id}-messages`, 0);
-        let level = await this.client.db.get(`${message.author.id}-level`, 1);
-        const title = await this.client.db.get(`${message.author.id}-title`, 'Dirt');
-        const needed = Math.floor(25 + (20 * level));
-        messages++;
-        if (messages === needed) {
-            level++;
-            this.client.sem(message, 'base', 'Level UP', `Congratulations ${message.member.displayName}, you've leveled up to **level ${level}**!`);
-            await this.client.db.set(`${message.author.id}-level`, 1);
-        }
-        switch (messages) {
-            case 250:
-                this.client.db.set(`${message.author.id}-title`, 'Wood');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 500:
-                this.client.db.set(`${message.author.id}-title`, 'Stone');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 1000:
-                this.client.db.set(`${message.author.id}-title`, 'Iron');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 2000:
-                this.client.db.set(`${message.author.id}-title`, 'Lapis Lazuli');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 4000:
-                this.client.db.set(`${message.author.id}-title`, 'Redstone');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 8000:
-                this.client.db.set(`${message.author.id}-title`, 'Gold');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 16000:
-                this.client.db.set(`${message.author.id}-title`, 'Diamond');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 32000:
-                this.client.db.set(`${message.author.id}-title`, 'Emerald');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 64000:
-                this.client.db.set(`${message.author.id}-title`, 'Ruby');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 128000:
-                this.client.db.set(`${message.author.id}-title`, 'Sapphire');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 256000:
-                this.client.db.set(`${message.author.id}-title`, 'Platinum');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 512000:
-                this.client.db.set(`${message.author.id}-title`, 'Titanium');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-            case 1000000:
-                this.client.db.set(`${message.author.id}-title`, 'Earth United');
-                this.client.sem(message, 'base', 'New Title', `Congratulations ${message.member.displayName}, you've archieved the title **${this.client.db.get(`${message.author.id}-title`, 'Dirt')}**!`);
-                break;
-        }
-        await this.client.db.set(`${message.author.id}-messages`, messages);
+        if (message.content.startsWith('!pres'))
+            return message.channel.send([
+                `**Name** ${(await PresenceSearch_1.default('PLAYING', message.member)).name}`,
+                `**Details** ${(await PresenceSearch_1.default('PLAYING', message.member)).details}`,
+                `**State** ${(await PresenceSearch_1.default('PLAYING', message.member)).state}`
+            ].join('\n'));
+        Leveling_1.default(message, this.client);
         if (message.channel.type === 'dm')
             return this.handleDM(message);
         return this.handleGuild(message);
@@ -128,6 +72,7 @@ class MessageReceived extends Listener_1.default {
             return console.error;
         if (typeof command === undefined)
             return console.log('Not working');
+        message.delete({ reason: `[EUB | Execution] Ran ${this.client.capitalise(command.name)} for ${message.author.tag}` });
         // if (!message.guild.me!.permissions.has(command.permissions.client.server, true))
         //     return message.channel.send(
         //         new MessageEmbed()

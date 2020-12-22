@@ -39,7 +39,7 @@ export default class Ping extends Command {
 
         setInterval(() => {
             const embed = new MessageEmbed()
-                .setColor('00ff81')
+                .setColor(this.client.colors.BASE)
                 .setTitle(`Ping towards: ${message.guild!.name}`)
                 .addField('Response Latency', `${ping.createdTimestamp - message.createdTimestamp}ms`, true)
                 .addField('API Latency', Math.floor(this.client.ws.ping), true);

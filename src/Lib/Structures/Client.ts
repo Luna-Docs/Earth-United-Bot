@@ -28,6 +28,16 @@ interface EUBDeleteMessageOptions {
     reason?: string;
 }
 
+enum EUBDiscordColors {
+    BASE = '00ff81',
+    WARN = 'f0f725',
+    MUTE = '2560f7',
+    KICK = 'f79525',
+    BAN = 'f73625',
+    BUGS = '777d84',
+    ERROR = 'f2594b'
+}
+
 export default class EUBClient extends Client {
     prefix: any;
     swearWords: any;
@@ -37,6 +47,7 @@ export default class EUBClient extends Client {
     eco: any;
     punish: any;
     capitalise = (str: string) => str.split(' ').map(str => str.slice(0, 1).toUpperCase() + str.slice(1)).join(' ');
+    colors = EUBDiscordColors;
 
     cooldown = new Collection<string, any>();
 
@@ -85,58 +96,59 @@ export default class EUBClient extends Client {
         return await super.login(token).catch((err) => this.logger.error(err));
     }
 
-    public embed(type: 'base' | 'bugs' | 'error', title: string, description: string): MessageEmbed {
-        const embed = new MessageEmbed();
+    public embed(type:
+        'base'
+        | 'warn'
+        | 'mute'
+        | 'kick'
+        | 'ban'
+        | 'bugs'
+        | 'error', title: string, description: string): MessageEmbed {
+        const embed = new MessageEmbed()
+            .setTitle(title)
+            .setDescription(description)
+            .setFooter(this.time);
 
-        if (type === 'base')
-            embed.setColor('00ff81')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
+        if (type === 'base') embed.setColor(this.colors.BASE)
+        if (type === 'warn') embed.setColor(this.colors.WARN);
+        if (type === 'mute') embed.setColor(this.colors.MUTE);
+        if (type === 'kick') embed.setColor(this.colors.KICK);
+        if (type === 'ban') embed.setColor(this.colors.BAN);
+        if (type === 'bugs') embed.setColor(this.colors.BUGS);
+        if (type === 'error') embed.setColor(this.colors.ERROR)
 
-        if (type === 'bugs')
-            embed.setColor('777d84')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
-
-        if (type === 'error')
-            embed.setColor('ef3b3b')
-                .setTitle(`Error: ${title}`)
-                .setDescription(description)
-                .setFooter(this.time);
-        
         return embed;
     }
 
-    public sem(msg: Message | EUBGuildMessage, type: 'base' | 'bugs' | 'error', title: string, description: string, deleteOptions?: EUBDeleteMessageOptions) {
-        const embed = new MessageEmbed();
+    public sem(
+        msg: Message | EUBGuildMessage,
+        type:
+            'base'
+            | 'warn'
+            | 'mute'
+            | 'kick'
+            | 'ban'
+            | 'bugs'
+            | 'error', title: string, description: string, deleteOptions?: EUBDeleteMessageOptions) {
+        const embed = new MessageEmbed()
+            .setTitle(title)
+            .setDescription(description)
+            .setFooter(this.time);;
 
-        if (type === 'base')
-            embed.setColor('00ff81')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
-        
-        if (type === 'bugs')
-            embed.setColor('777d84')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
+        if (type === 'base') embed.setColor(this.colors.BASE)
+        if (type === 'warn') embed.setColor(this.colors.WARN);
+        if (type === 'mute') embed.setColor(this.colors.MUTE);
+        if (type === 'kick') embed.setColor(this.colors.KICK);
+        if (type === 'ban') embed.setColor(this.colors.BAN);
+        if (type === 'bugs') embed.setColor(this.colors.BUGS);
+        if (type === 'error') embed.setColor(this.colors.ERROR)
 
-        if (type === 'error')
-            embed.setColor('ef3b3b')
-                .setTitle(title)
-                .setDescription(description)
-                .setFooter(this.time);
-
-            
         if (!deleteOptions) return msg.channel.send(embed)
         else if (deleteOptions) return msg.channel.send(embed).then((msg) => {
             msg.delete({
-                timeout: deleteOptions.timeout, 
+                timeout: deleteOptions.timeout,
                 reason: deleteOptions.reason
-            }) 
+            })
         });
     }
 
