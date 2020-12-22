@@ -1,7 +1,7 @@
 import MS from "pretty-ms";
 
 export = (Ms: number) => {
-    const ms = MS(Ms, {verbose: true, secondsDecimalDigits: 0});
+    const ms = MS(Ms, {verbose: true, keepDecimalsOnWholeSeconds: true});
 
     // ms.years ? time += `${ms.years} year${ms.years > 1 ? 's' : ''} ` : ``;
     // ms.months ? time += `${ms.months} month${ms.months > 1 ? 's' : ''} ` : ``;

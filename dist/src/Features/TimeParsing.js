@@ -2,7 +2,7 @@
 const tslib_1 = require("tslib");
 const pretty_ms_1 = tslib_1.__importDefault(require("pretty-ms"));
 module.exports = (Ms) => {
-    const ms = pretty_ms_1.default(Ms, { verbose: true, secondsDecimalDigits: 0 });
+    const ms = pretty_ms_1.default(Ms, { verbose: true, keepDecimalsOnWholeSeconds: true });
     // ms.years ? time += `${ms.years} year${ms.years > 1 ? 's' : ''} ` : ``;
     // ms.months ? time += `${ms.months} month${ms.months > 1 ? 's' : ''} ` : ``;
     // ms.weeks ? time += `${ms.weeks} week${ms.weeks > 1 ? 's' : ''} ` : ``;

@@ -582,7 +582,7 @@
         "affectsGlobalScope": false
       },
       "../src/eub.ts": {
-        "version": "d8690569362db17029b55142d5f869a9987b930995513ae30a7d271e050388d7",
+        "version": "0d055aabb619b609e29f0bec36b5c8aa4d5f16a1785c4d63f7d089ca90de5aae",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -632,12 +632,12 @@
         "affectsGlobalScope": false
       },
       "../src/features/timeparsing.ts": {
-        "version": "f76c24be3028b043d29bec3f683fc88b0c13e36a9d51b8e289a64ebebb1aebf6",
+        "version": "6eaefe50f07bb7a9d4571adfbd188e5f3e8fb37f4d9ecb66d8242ed2e6ad6240",
         "signature": "3e899be02e59d511b2d7621884411b91220669c1112585b9872ba2cac30d53d7",
         "affectsGlobalScope": false
       },
       "../src/commands/general/userinfo.ts": {
-        "version": "1e52d2f24dff54144075ae656c3adb51834b22a7d633f40b89f3d5543bd94eff",
+        "version": "ec188544ec1aaeb0261d2a64e8dc23b4f923ad9e824aec8a84c40610b980ea75",
         "signature": "794f0cec62791aca569c36d692ff225d982b906a400a11371bdcf1ba552fb721",
         "affectsGlobalScope": false
       },
