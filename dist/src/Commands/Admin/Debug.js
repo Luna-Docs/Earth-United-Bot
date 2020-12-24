@@ -45,7 +45,10 @@ class UserInfo extends Command_1.default {
         let type = args[0];
         let values = args.slice(1).join(' ');
         if (!type || !args.length)
-            return this.client.sem(message, 'error', 'Error | Parameters', `You didn't define any arguments with the ${this.client.capitalise(this.name)} command.\nYou may use the following usages:\n> ${this.usages.join('\n> ')}`);
+            return this.client.sem(message, 'error', 'Error | Parameters', `You didn't define any arguments with the ${this.client.capitalise(this.name)} command.\nYou may use the following usages:\n> ${[
+                '!debug user <Mention|ID|Tag|Username|Nickname>',
+                '!debug channel <Mention|ID|Name>'
+            ].join('\n> ')}`);
         switch (type) {
             case 'user':
                 const user = await this.client.fetch.member.get(values || message.member.id, message.guild);
@@ -74,7 +77,7 @@ class UserInfo extends Command_1.default {
                     `**Mention** ${channel}`,
                     `**ID** ${channel.id}`,
                     `**Name** ${channel.name}`,
-                    channel instanceof discord_js_1.TextChannel ? `**Topic**\n> ${channel.topic}\n\n` : '',
+                    channel instanceof discord_js_1.TextChannel ? `**Topic**\n> ${channel.topic || "No topic set!"}\n` : '',
                     `**Type** ${this.client.capitalise(channel.type)}`,
                 ].join('\n'));
         }

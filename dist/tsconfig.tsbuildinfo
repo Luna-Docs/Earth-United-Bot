@@ -602,7 +602,7 @@
         "affectsGlobalScope": false
       },
       "../src/commands/admin/debug.ts": {
-        "version": "c00341b704e7f9cc54f0b271bea41d332454b8ee492e2ecc877d2235c54a57c7",
+        "version": "ade080c2bf0ffd6dacb26eb98ce6d4e5a64a04f8bf4ee45894c5905a035b2ca5",
         "signature": "3bb1add3cd3bc5d92ec2e62cd52f7c86f59da7a156902e11c3bd1057beee87ca",
         "affectsGlobalScope": false
       },

@@ -51,7 +51,10 @@ export default class UserInfo extends Command {
 
         if (!type || !args.length)
             return this.client.sem(message, 'error', 'Error | Parameters',
-            `You didn't define any arguments with the ${this.client.capitalise(this.name)} command.\nYou may use the following usages:\n> ${this.usages.join('\n> ')}`);
+            `You didn't define any arguments with the ${this.client.capitalise(this.name)} command.\nYou may use the following usages:\n> ${[
+                '!debug user <Mention|ID|Tag|Username|Nickname>',
+                '!debug channel <Mention|ID|Name>'
+            ].join('\n> ')}`);
 
         switch (type) {
             case 'user':
@@ -86,7 +89,7 @@ export default class UserInfo extends Command {
                     `**Mention** ${channel}`,
                     `**ID** ${channel!.id}`,
                     `**Name** ${channel!.name}`,
-                    channel instanceof TextChannel ? `**Topic**\n> ${channel!.topic}\n\n` : '',
+                    channel instanceof TextChannel ? `**Topic**\n> ${channel!.topic || "No topic set!"}\n` : '',
                     `**Type** ${this.client.capitalise(channel!.type)}`,
                 ].join('\n'));
         }
