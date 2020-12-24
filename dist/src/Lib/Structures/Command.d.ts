@@ -6,8 +6,8 @@ export default class Command {
     category: string;
     name: string;
     aliases: string[];
-    usages: string[] | string;
-    examples: string[] | string;
+    usages: string[];
+    examples: string[];
     description: string;
     permissions: PermissionCommandData;
     cooldown: CooldownCommandData;

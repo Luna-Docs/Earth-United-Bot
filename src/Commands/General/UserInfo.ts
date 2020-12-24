@@ -67,8 +67,8 @@ export default class UserInfo extends Command {
                     `**Tag** ${message.member!.user.tag}`
                 ].join('\n'))
                 .addField('Dates', [
-                    `**Joined** ${await TimeParsing(message.member.joinedTimestamp!)}`,
-                    `**Created** ${await TimeParsing(message.member.user.createdTimestamp)}`
+                    `**Joined** ${await TimeParsing(Date.now() - message.member.joinedTimestamp!)}`,
+                    `**Created** ${await TimeParsing(Date.now() - message.member.user.createdTimestamp)}`
                 ].join('\n'))
                 .addField('Ranks', [
                     `**Highest** ${message.member.roles.highest}`,
@@ -76,39 +76,51 @@ export default class UserInfo extends Command {
                     `>>> ${message.member.roles.cache.sort((a, b): any => b.position < a.position).map(c => c)}`
                 ].join('\n'));
 
+            const pres = `${custom ? `**Custom** ${custom.state}` : ''
+                }${streaming ? [
+                    `**Streaming**`,
+                    `> (${streaming.url})[${streaming.name}]`,
+                    `> ${streaming.details}`,
+                    `> ${streaming.state}`,
+                    ''
+                ].join('\n') : ''
+                }${playing ? [
+                    `**Playing**`,
+                    `> ${playing.name}`,
+                    playing.details && playing.state
+                        ? [
+                            `> ${playing.details}`,
+                            `> ${playing.state}`
+                        ].join('\n')
+                        : (playing.details && !playing.state ? `> ${playing.details}` : ``),
+                    ''
+                ].join('\n') : ''
+                }${watching ? [
+                    `**Watching**`,
+                    `${watching.name}`,
+                    watching.details && watching.state
+                        ? [
+                            `> ${watching.details}`,
+                            `> ${watching.state}`,
+                            ''
+                        ].join('\n')
+                        : (watching.details && !watching.state ? `> ${watching.details}\n` : ``),
+                    ''
+                ].join('\n') : ''
+                }${listening ? [
+                    `**Listening | ${listening.name}**`,
+                    `> ${listening.details}`,
+                    `> ${listening.state}`
+                ].join('\n') : ''
+                }`;
+
             if (
                 custom ||
                 streaming ||
                 playing ||
                 watching ||
                 listening
-            ) embM.addField('Presence', [
-                `**Status** ${stat[message.member.presence.status]}`,
-                `${custom ? `**Custom** ${custom.state}` : ''}`,
-                `${streaming ? [
-                    `**Streaming**`,
-                    `> ${streaming.name}`,
-                    `> ${streaming.details}`,
-                    `> ${streaming.state}`
-                ].join('\n') : null}`,
-                `${playing ? [
-                    `**Playing**`,
-                    `> ${playing.name}`,
-                    `> ${playing.details}`,
-                    `> ${playing.state}`
-                ].join('\n') : null}`,
-                `${watching ? [
-                    `**Watching**`,
-                    `> ${watching.name}`,
-                    `> ${watching.details}`,
-                    `> ${watching.state}`
-                ].join('\n') : null}`,
-                `${listening ? [
-                    `**Listening | ${listening.name}**`,
-                    `> ${listening.details}`,
-                    `> ${listening.state}`
-                ].join('\n') : null}`
-            ].join('\n'));
+            ) embM.addField('Presence', pres);
             else embM.addField('Presence', `**Status** ${stat[message.member.presence.status]}`)
 
             return message.channel.send(embM);
@@ -131,8 +143,8 @@ export default class UserInfo extends Command {
                         `**Tag** ${mem!.user.tag}`
                     ].join('\n'))
                     .addField('Dates', [
-                        `**Joined** ${await TimeParsing(mem.joinedTimestamp!)}`,
-                        `**Created** ${await TimeParsing(mem.user.createdTimestamp)}`
+                        `**Joined** ${await TimeParsing(Date.now() - mem.joinedTimestamp!)}`,
+                        `**Created** ${await TimeParsing(Date.now() - mem.user.createdTimestamp)}`
                     ].join('\n'))
                     .addField('Ranks', [
                         `**Highest** ${mem.roles.highest}`,
@@ -145,34 +157,38 @@ export default class UserInfo extends Command {
                         `**Streaming**`,
                         `> (${streaming.url})[${streaming.name}]`,
                         `> ${streaming.details}`,
-                        `> ${streaming.state}`
+                        `> ${streaming.state}`,
+                        ''
                     ].join('\n') : ''
                     }${playing ? [
                         `**Playing**`,
                         `> ${playing.name}`,
-                        playing.details && playing.state 
-                        ? [
-                            `> ${playing.details}`,
-                            `> ${playing.state}`
-                        ].join('\n') 
-                        : (playing.details && !playing.state ? `> ${playing.details}` : ``)
+                        playing.details && playing.state
+                            ? [
+                                `> ${playing.details}`,
+                                `> ${playing.state}`
+                            ].join('\n')
+                            : (playing.details && !playing.state ? `> ${playing.details}` : ``),
+                        ''
                     ].join('\n') : ''
                     }${watching ? [
                         `**Watching**`,
                         `${watching.name}`,
-                        watching.details && watching.state 
-                        ? [
-                            `> ${watching.details}`,
-                            `> ${watching.state}`
-                        ].join('\n') 
-                        : (watching.details && !watching.state ? `> ${watching.details}` : ``)
+                        watching.details && watching.state
+                            ? [
+                                `> ${watching.details}`,
+                                `> ${watching.state}`,
+                                ''
+                            ].join('\n')
+                            : (watching.details && !watching.state ? `> ${watching.details}\n` : ``),
+                        ''
                     ].join('\n') : ''
                     }${listening ? [
                         `**Listening | ${listening.name}**`,
                         `> ${listening.details}`,
                         `> ${listening.state}`
                     ].join('\n') : ''
-                }`
+                    }`;
 
                 if (
                     custom ||

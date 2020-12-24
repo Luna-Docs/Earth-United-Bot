@@ -58,7 +58,7 @@ export default class EUBClient extends Client {
     constructor();
     start(token: string | any): Promise<string | void>;
     embed(type: 'base' | 'warn' | 'mute' | 'kick' | 'ban' | 'bugs' | 'error', title: string, description: string): MessageEmbed;
-    sem(msg: Message | EUBGuildMessage, type: 'base' | 'warn' | 'mute' | 'kick' | 'ban' | 'bugs' | 'error', title: string, description: string, deleteOptions?: EUBDeleteMessageOptions): Promise<void> | Promise<Message> | undefined;
+    sem(msg: Message | EUBGuildMessage, type: 'base' | 'warn' | 'mute' | 'kick' | 'ban' | 'bugs' | 'error', title: string, description: string, deleteOptions?: EUBDeleteMessageOptions): Promise<Message> | Promise<void> | undefined;
     get time(): string;
 }
 export {};

@@ -45,4 +45,4 @@ class Ping extends Command_1.default {
     }
 }
 exports.default = Ping;
-//# sourceMappingURL=ping.js.map
+//# sourceMappingURL=Ping.js.map

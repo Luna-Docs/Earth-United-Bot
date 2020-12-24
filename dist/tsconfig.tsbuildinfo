@@ -522,8 +522,8 @@
         "affectsGlobalScope": false
       },
       "../src/lib/structures/command.ts": {
-        "version": "ec7df2d77a44128725af944e46a411b0e238e4990b01c275fb21ad837687faec",
-        "signature": "94bd4e2f7ec7c93bb43d731356de3ba0b78f12a96f2ecfdd6d4f36c7395de4cb",
+        "version": "891089056e1cf7d8a2569f618fa78c4cdddbabca0d7bf7fa09ecefb9c52fa79f",
+        "signature": "33ea4a934ddb4bcb2262c80c0f9fb843afca99d0f3fda69238f10e9cd5c967c5",
         "affectsGlobalScope": false
       },
       "../src/handlers/commandhandler.ts": {
@@ -568,7 +568,7 @@
       },
       "../src/lib/structures/client.ts": {
         "version": "80379bf858e1896aa9c1cfae2fc234fb5af0d9abe84d78e3c277044182542508",
-        "signature": "a5f743c76df9f45d7c4cfd85c27091f04ccbf6879edff37325dd480872e40e50",
+        "signature": "3d7831cb9342bc2b7a83e6e6553c686c82929ba65f3e446f36ebdc2f6ffd8925",
         "affectsGlobalScope": false
       },
       "../node_modules/vultrex.db/dist/interfaces/rowdata.d.ts": {
@@ -586,8 +586,28 @@
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
+      "../node_modules/pretty-ms/index.d.ts": {
+        "version": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
+        "signature": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
+        "affectsGlobalScope": false
+      },
+      "../src/features/timeparsing.ts": {
+        "version": "6eaefe50f07bb7a9d4571adfbd188e5f3e8fb37f4d9ecb66d8242ed2e6ad6240",
+        "signature": "3e899be02e59d511b2d7621884411b91220669c1112585b9872ba2cac30d53d7",
+        "affectsGlobalScope": false
+      },
+      "../src/features/checkstaff.ts": {
+        "version": "1a0ac4ddb1a4d6291d197f6c674ebbaf86f528129ccd47fd307dc058e10289a5",
+        "signature": "c367f68de51d2134c76d383b1449cc1348e6f89f69eb36dbb6acc8c656521db7",
+        "affectsGlobalScope": false
+      },
+      "../src/commands/admin/debug.ts": {
+        "version": "c00341b704e7f9cc54f0b271bea41d332454b8ee492e2ecc877d2235c54a57c7",
+        "signature": "3bb1add3cd3bc5d92ec2e62cd52f7c86f59da7a156902e11c3bd1057beee87ca",
+        "affectsGlobalScope": false
+      },
       "../src/commands/admin/purge.ts": {
-        "version": "d890cde6ea1b7120acdc816fbe3b3d24249c696809725359b972dc2d6a9bc4cd",
+        "version": "78fff6be5d5c13c9033432563164f6e74ca5e968512d7e887ab72fcdb7a0817b",
         "signature": "16ea4c4b0d5cc8b4cd05a3a502345e1266bf5e8e831576b91a656c93a5700677",
         "affectsGlobalScope": false
       },
@@ -626,18 +646,8 @@
         "signature": "c1ed2473aafb8ca2a91433072e11a6bb6009f2537c160b4c3107d58d1453883e",
         "affectsGlobalScope": false
       },
-      "../node_modules/pretty-ms/index.d.ts": {
-        "version": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
-        "signature": "ea6e724763d8d7f66198ecf675ba899ff6d3057fac195742b4d92f2b927df00d",
-        "affectsGlobalScope": false
-      },
-      "../src/features/timeparsing.ts": {
-        "version": "6eaefe50f07bb7a9d4571adfbd188e5f3e8fb37f4d9ecb66d8242ed2e6ad6240",
-        "signature": "3e899be02e59d511b2d7621884411b91220669c1112585b9872ba2cac30d53d7",
-        "affectsGlobalScope": false
-      },
       "../src/commands/general/userinfo.ts": {
-        "version": "3eb87d797a5af11f08ee11b6986a0a0ec7e75aa538ddced40d30c346e272ccc4",
+        "version": "4ea7788486aca45d743d4f577cd201526befa4f47ee7ba8aa587977480e41865",
         "signature": "794f0cec62791aca569c36d692ff225d982b906a400a11371bdcf1ba552fb721",
         "affectsGlobalScope": false
       },
@@ -647,7 +657,7 @@
         "affectsGlobalScope": false
       },
       "../src/features/leveling.ts": {
-        "version": "1eecaeca0429ccb3394779523e0dd7fe446a4da6248ca5fe53055aeb3fc51c8c",
+        "version": "fe5ef98f5f0af59ba3afcc6150632b697b087e4798afdcae02d23c9bf240da4b",
         "signature": "3dc30c60f45fa773178fe7a2d6a5d3ab5a8b6d2907f2e444f2fe5921b0823ab5",
         "affectsGlobalScope": false
       },
@@ -723,6 +733,7 @@
       "resolveJsonModule": true,
       "esModuleInterop": true,
       "project": "../tsconfig.json",
+      "watch": true,
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
@@ -932,6 +943,15 @@
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/winston-transport/index.d.ts"
       ],
+      "../src/commands/admin/debug.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/features/checkstaff.ts",
+        "../src/features/timeparsing.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/commands/admin/purge.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
@@ -993,6 +1013,11 @@
         "../node_modules/dotenv/types/index.d.ts",
         "../node_modules/tslib/tslib.d.ts",
         "../node_modules/vultrex.db/dist/index.d.ts",
+        "../src/lib/structures/client.ts"
+      ],
+      "../src/features/checkstaff.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/tslib/tslib.d.ts",
         "../src/lib/structures/client.ts"
       ],
       "../src/features/leveling.ts": [
@@ -1341,6 +1366,12 @@
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/winston-transport/index.d.ts"
       ],
+      "../src/commands/admin/debug.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/commands/admin/purge.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
         "../src/lib/structures/client.ts",
@@ -1385,6 +1416,10 @@
         "../src/lib/structures/client.ts",
         "../src/lib/structures/command.ts",
         "../src/lib/types/eub.d.ts"
+      ],
+      "../src/features/checkstaff.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts"
       ],
       "../src/features/leveling.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
@@ -1584,6 +1619,7 @@
       "../node_modules/winston/lib/winston/transports/index.d.ts",
       "../package-lock.json",
       "../package.json",
+      "../src/commands/admin/debug.ts",
       "../src/commands/admin/purge.ts",
       "../src/commands/admin/search.ts",
       "../src/commands/economy/daily.ts",
@@ -1593,6 +1629,7 @@
       "../src/commands/general/userinfo.ts",
       "../src/commands/leveling/level.ts",
       "../src/eub.ts",
+      "../src/features/checkstaff.ts",
       "../src/features/leveling.ts",
       "../src/features/presencesearch.ts",
       "../src/features/timeparsing.ts",

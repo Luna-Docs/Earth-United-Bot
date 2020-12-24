@@ -64,4 +64,4 @@ class Level extends Command_1.default {
     }
 }
 exports.default = Level;
-//# sourceMappingURL=level.js.map
+//# sourceMappingURL=Level.js.map

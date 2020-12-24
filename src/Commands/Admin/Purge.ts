@@ -34,8 +34,8 @@ export default class Purge extends Command {
     }
 
     public async execute(message: EUBGuildMessage, args: string[]) {
-        if (!message.member.permissions.has('MANAGE_MESSAGES', true))
-            return this.client.sem(message, 'error', 'Permission Error', `You need the Manage Messages permission to execute this command!`);
+        if (!message.member!.permissions.has('MANAGE_MESSAGES', true))
+            return this.client.sem(message, 'error', 'Error | Permission', `You need the Manage Messages permission to execute this command!`);
 
         let toDelete = Number(args[0]);
 

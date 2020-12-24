@@ -17,7 +17,7 @@ export = async (message: Message | EUBGuildMessage, client: Cluster) => {
             client.sem(message, 'base', 'Level UP', 
             `Congratulations ${message.member!.displayName}, you've leveled up to **level ${level}**!`);
 
-            await client.db.set(`${message.author.id}-level`, 1);
+            await client.db.set(`${message.author.id}-level`, level);
         }
 
         switch (messages) {

@@ -34,7 +34,7 @@ class Purge extends Command_1.default {
     }
     async execute(message, args) {
         if (!message.member.permissions.has('MANAGE_MESSAGES', true))
-            return this.client.sem(message, 'error', 'Permission Error', `You need the Manage Messages permission to execute this command!`);
+            return this.client.sem(message, 'error', 'Error | Permission', `You need the Manage Messages permission to execute this command!`);
         let toDelete = Number(args[0]);
         if (!toDelete || isNaN(toDelete))
             return this.client.sem(message, 'error', 'Amount Error', `The amount of messages to delete must be a number!`);

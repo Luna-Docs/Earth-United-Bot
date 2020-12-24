@@ -61,46 +61,52 @@ class UserInfo extends Command_1.default {
                 `**Tag** ${message.member.user.tag}`
             ].join('\n'))
                 .addField('Dates', [
-                `**Joined** ${await TimeParsing_1.default(message.member.joinedTimestamp)}`,
-                `**Created** ${await TimeParsing_1.default(message.member.user.createdTimestamp)}`
+                `**Joined** ${await TimeParsing_1.default(Date.now() - message.member.joinedTimestamp)}`,
+                `**Created** ${await TimeParsing_1.default(Date.now() - message.member.user.createdTimestamp)}`
             ].join('\n'))
                 .addField('Ranks', [
                 `**Highest** ${message.member.roles.highest}`,
                 `**Sorted**`,
                 `>>> ${message.member.roles.cache.sort((a, b) => b.position < a.position).map(c => c)}`
             ].join('\n'));
+            const pres = `${custom ? `**Custom** ${custom.state}` : ''}${streaming ? [
+                `**Streaming**`,
+                `> (${streaming.url})[${streaming.name}]`,
+                `> ${streaming.details}`,
+                `> ${streaming.state}`,
+                ''
+            ].join('\n') : ''}${playing ? [
+                `**Playing**`,
+                `> ${playing.name}`,
+                playing.details && playing.state
+                    ? [
+                        `> ${playing.details}`,
+                        `> ${playing.state}`
+                    ].join('\n')
+                    : (playing.details && !playing.state ? `> ${playing.details}` : ``),
+                ''
+            ].join('\n') : ''}${watching ? [
+                `**Watching**`,
+                `${watching.name}`,
+                watching.details && watching.state
+                    ? [
+                        `> ${watching.details}`,
+                        `> ${watching.state}`,
+                        ''
+                    ].join('\n')
+                    : (watching.details && !watching.state ? `> ${watching.details}\n` : ``),
+                ''
+            ].join('\n') : ''}${listening ? [
+                `**Listening | ${listening.name}**`,
+                `> ${listening.details}`,
+                `> ${listening.state}`
+            ].join('\n') : ''}`;
             if (custom ||
                 streaming ||
                 playing ||
                 watching ||
                 listening)
-                embM.addField('Presence', [
-                    `**Status** ${stat[message.member.presence.status]}`,
-                    `${custom ? `**Custom** ${custom.state}` : ''}`,
-                    `${streaming ? [
-                        `**Streaming**`,
-                        `> ${streaming.name}`,
-                        `> ${streaming.details}`,
-                        `> ${streaming.state}`
-                    ].join('\n') : null}`,
-                    `${playing ? [
-                        `**Playing**`,
-                        `> ${playing.name}`,
-                        `> ${playing.details}`,
-                        `> ${playing.state}`
-                    ].join('\n') : null}`,
-                    `${watching ? [
-                        `**Watching**`,
-                        `> ${watching.name}`,
-                        `> ${watching.details}`,
-                        `> ${watching.state}`
-                    ].join('\n') : null}`,
-                    `${listening ? [
-                        `**Listening | ${listening.name}**`,
-                        `> ${listening.details}`,
-                        `> ${listening.state}`
-                    ].join('\n') : null}`
-                ].join('\n'));
+                embM.addField('Presence', pres);
             else
                 embM.addField('Presence', `**Status** ${stat[message.member.presence.status]}`);
             return message.channel.send(embM);
@@ -121,8 +127,8 @@ class UserInfo extends Command_1.default {
                     `**Tag** ${mem.user.tag}`
                 ].join('\n'))
                     .addField('Dates', [
-                    `**Joined** ${await TimeParsing_1.default(mem.joinedTimestamp)}`,
-                    `**Created** ${await TimeParsing_1.default(mem.user.createdTimestamp)}`
+                    `**Joined** ${await TimeParsing_1.default(Date.now() - mem.joinedTimestamp)}`,
+                    `**Created** ${await TimeParsing_1.default(Date.now() - mem.user.createdTimestamp)}`
                 ].join('\n'))
                     .addField('Ranks', [
                     `**Highest** ${mem.roles.highest}`,
@@ -133,7 +139,8 @@ class UserInfo extends Command_1.default {
                     `**Streaming**`,
                     `> (${streaming.url})[${streaming.name}]`,
                     `> ${streaming.details}`,
-                    `> ${streaming.state}`
+                    `> ${streaming.state}`,
+                    ''
                 ].join('\n') : ''}${playing ? [
                     `**Playing**`,
                     `> ${playing.name}`,
@@ -142,16 +149,19 @@ class UserInfo extends Command_1.default {
                             `> ${playing.details}`,
                             `> ${playing.state}`
                         ].join('\n')
-                        : (playing.details && !playing.state ? `> ${playing.details}` : ``)
+                        : (playing.details && !playing.state ? `> ${playing.details}` : ``),
+                    ''
                 ].join('\n') : ''}${watching ? [
                     `**Watching**`,
                     `${watching.name}`,
                     watching.details && watching.state
                         ? [
                             `> ${watching.details}`,
-                            `> ${watching.state}`
+                            `> ${watching.state}`,
+                            ''
                         ].join('\n')
-                        : (watching.details && !watching.state ? `> ${watching.details}` : ``)
+                        : (watching.details && !watching.state ? `> ${watching.details}\n` : ``),
+                    ''
                 ].join('\n') : ''}${listening ? [
                     `**Listening | ${listening.name}**`,
                     `> ${listening.details}`,

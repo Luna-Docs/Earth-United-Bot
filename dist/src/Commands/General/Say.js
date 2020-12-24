@@ -57,4 +57,4 @@ class Say extends Command_1.default {
     }
 }
 exports.default = Say;
-//# sourceMappingURL=say.js.map
+//# sourceMappingURL=Say.js.map
