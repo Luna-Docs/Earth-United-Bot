@@ -129,38 +129,40 @@ class UserInfo extends Command_1.default {
                     `**Sorted**`,
                     `>>> ${mem.roles.cache.sort((a, b) => b.position < a.position).map(c => c)}`
                 ].join('\n'));
+                const pres = `${custom ? `**Custom** ${custom.state}` : ''}${streaming ? [
+                    `**Streaming**`,
+                    `> (${streaming.url})[${streaming.name}]`,
+                    `> ${streaming.details}`,
+                    `> ${streaming.state}`
+                ].join('\n') : ''}${playing ? [
+                    `**Playing**`,
+                    `> ${playing.name}`,
+                    playing.details && playing.state
+                        ? [
+                            `> ${playing.details}`,
+                            `> ${playing.state}`
+                        ].join('\n')
+                        : (playing.details && !playing.state ? `> ${playing.details}` : ``)
+                ].join('\n') : ''}${watching ? [
+                    `**Watching**`,
+                    `${watching.name}`,
+                    watching.details && watching.state
+                        ? [
+                            `> ${watching.details}`,
+                            `> ${watching.state}`
+                        ].join('\n')
+                        : (watching.details && !watching.state ? `> ${watching.details}` : ``)
+                ].join('\n') : ''}${listening ? [
+                    `**Listening | ${listening.name}**`,
+                    `> ${listening.details}`,
+                    `> ${listening.state}`
+                ].join('\n') : ''}`;
                 if (custom ||
                     streaming ||
                     playing ||
                     listening ||
                     watching)
-                    embM.addField('Presence', [
-                        `**Status** ${stat[mem.presence.status]}`,
-                        `${custom ? `**Custom** ${custom.state}` : ''}`,
-                        `${streaming ? [
-                            `**Streaming**`,
-                            `> ${streaming.name}`,
-                            `> ${streaming.details}`,
-                            `> ${streaming.state}`
-                        ].join('\n') : ''}`,
-                        `${playing ? [
-                            `**Playing**`,
-                            `> ${playing.name}`,
-                            `> ${playing.details}`,
-                            `> ${playing.state}`
-                        ].join('\n') : ''}`,
-                        `${watching ? [
-                            `**Watching**`,
-                            `> ${watching.name}`,
-                            `> ${watching.details}`,
-                            `> ${watching.state}`
-                        ].join('\n') : ''}`,
-                        `${listening ? [
-                            `**Listening | ${listening.name}**`,
-                            `> ${listening.details}`,
-                            `> ${listening.state}`
-                        ].join('\n') : ''}`
-                    ].join('\n'));
+                    embM.addField('Presence', pres);
                 else
                     embM.addField('Presence', `**Status** ${stat[mem.presence.status]}`);
                 return message.channel.send(embM);

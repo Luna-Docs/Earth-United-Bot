@@ -637,7 +637,7 @@
         "affectsGlobalScope": false
       },
       "../src/commands/general/userinfo.ts": {
-        "version": "ec188544ec1aaeb0261d2a64e8dc23b4f923ad9e824aec8a84c40610b980ea75",
+        "version": "3eb87d797a5af11f08ee11b6986a0a0ec7e75aa538ddced40d30c346e272ccc4",
         "signature": "794f0cec62791aca569c36d692ff225d982b906a400a11371bdcf1ba552fb721",
         "affectsGlobalScope": false
       },
