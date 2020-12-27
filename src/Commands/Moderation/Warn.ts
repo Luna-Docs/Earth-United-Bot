@@ -63,9 +63,9 @@ export default class Level extends Command {
         else if (mem === undefined) return this.client.sem(message, 'error', 'Error | Fetcher',
         `The member you provided (\`${us}\`) either doesn't exist or you made a typo!`);
 
-        // if (member!.id === message.member.id) 
-        // return this.client.sem(message, 'error', 'Error | Permission',
-        // `You can't warn yourself!`);
+        if (member!.id === message.member.id) 
+        return this.client.sem(message, 'error', 'Error | Permission',
+        `You can't warn yourself!`);
 
         let caseNumber = await this.client.db.get(`${message.member.id}-case`, 1);
             
@@ -80,15 +80,20 @@ export default class Level extends Command {
         this.client.db.set(`${message.member.id}-case`, caseNumber);
 
         const t = await this.client.sem(message, 'base', 'Punishments | Warning',
-        `The user **${member!.user.tag}** has been kicked by **${reason.includes('-s') ? 'a Staff Member' : message.member.user.tag}** for:\n\`\`\`${reason}\`\`\``);
+        `The user **${member!.user.tag}** has been warned by **${reason.includes('-s') ? 'a Staff Member' : message.member.user.tag}** for:\n\`\`\`${reason}\`\`\``);
 
         const channel = await this.client.fetch.channel.get('792763060418379797', message.guild);
         const emb = this.client.embed('warn', 'Punishments | Warning', [
             `**User** ${member!}`,
-            `**Moderator** ${message.member}${t instanceof Message ? '\n**Channel**'+t.channel : ''}`,
+            `**Moderator** ${message.member}${t instanceof Message ? `\n**Channel** <#${t.channel.id}>` : ''}`,
             `**Reason** ${reason ? reason : 'No reason provided'}`,
-            `**Punished At** ${moment(Date.now()).format('MMM[/]Do[/]YYYY [|] hh:mm A')}`
+            `**Punished At** ${moment(Date.now()).format('MMM[/]DD[/]YYYY [|] hh:mm A')}`
         ].join('\n'));
+
+        const dmEmb = this.client.embed('warn', 'Notifications | Staff',
+        `You have been warned in **${message.guild.name}** for:\n\`\`\`${reason}\`\`\``);
+        
+        await member!.user.send(dmEmb);
 
         channel instanceof TextChannel 
         ? channel.send(emb)
