@@ -657,7 +657,7 @@
         "affectsGlobalScope": false
       },
       "../src/commands/moderation/warn.ts": {
-        "version": "8e2ddef74c29bb611693591911a4dfe8e060de2b0380b7c22b4a22ad6663cc56",
+        "version": "9c19b31561cd49ea69e41a8a10e8c2cdb90972b4110671c6ca56257943741f9a",
         "signature": "6345d94858ea8a30cecd8fd11dced65f8b962a9c6431b8e6227d9df3b7caac40",
         "affectsGlobalScope": false
       },

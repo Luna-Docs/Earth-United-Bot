@@ -67,14 +67,17 @@ export default class Level extends Command {
         // return this.client.sem(message, 'error', 'Error | Permission',
         // `You can't warn yourself!`);
 
-        const caseNumber = await this.client.db.get(`case`, 1);
+        let caseNumber = await this.client.db.get(`${message.member.id}-case`, 1);
             
-        this.client.db.push(`${message.member.id}-warnings`, {
+        this.client.db.set(`${message.member.id}-warnings-${caseNumber}`, {
             user: member!.id,
             reason: reason ? reason : 'No reason provided',
             case: `#${caseNumber}`,
             at: `${moment(Date.now()).format('MMM[/]Do[/]YYYY [|] hh:mm A')}`
         });
+
+        caseNumber++
+        this.client.db.set(`${message.member.id}-case`, caseNumber);
 
         const t = await this.client.sem(message, 'base', 'Punishments | Warning',
         `The user **${member!.user.tag}** has been kicked by **${reason.includes('-s') ? 'a Staff Member' : message.member.user.tag}** for:\n\`\`\`${reason}\`\`\``);
