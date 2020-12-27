@@ -13,11 +13,9 @@ export default class MessageReceived extends Listener {
     public async execute(message: Message | EUBGuildMessage) {
         if (message.partial || (message.author!.bot)) return;
 
-        if(message.content.startsWith('!pres')) return message.channel.send([
-            `**Name** ${(await Pres('PLAYING', message.member!))!.name}`,
-            `**Details** ${(await Pres('PLAYING', message.member!))!.details}`,
-            `**State** ${(await Pres('PLAYING', message.member!))!.state}`
-        ].join('\n'));
+        if(message.content.startsWith('!pres')) return console.log(`${
+            await this.client.db.get(`${message.member!.id}-warnings`, [])
+        }`);
 
         Leveling(message, this.client);
 

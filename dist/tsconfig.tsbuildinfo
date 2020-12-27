@@ -656,6 +656,11 @@
         "signature": "50da6ec64f9bad18ed02dc1d23b40c8d226510653d87321b560a1ec82a3aef91",
         "affectsGlobalScope": false
       },
+      "../src/commands/moderation/warn.ts": {
+        "version": "8e2ddef74c29bb611693591911a4dfe8e060de2b0380b7c22b4a22ad6663cc56",
+        "signature": "6345d94858ea8a30cecd8fd11dced65f8b962a9c6431b8e6227d9df3b7caac40",
+        "affectsGlobalScope": false
+      },
       "../src/features/leveling.ts": {
         "version": "fe5ef98f5f0af59ba3afcc6150632b697b087e4798afdcae02d23c9bf240da4b",
         "signature": "3dc30c60f45fa773178fe7a2d6a5d3ab5a8b6d2907f2e444f2fe5921b0823ab5",
@@ -687,8 +692,8 @@
         "affectsGlobalScope": false
       },
       "../src/listeners/message.ts": {
-        "version": "84089a9672ca07315b0070a9f019a20bb42aff00e3f5dc3901d9ebfd73ec868c",
-        "signature": "e19c06dd9b588c02921e62c88d38b5fbfbdd7c580c65f3dfb559b052b4f82188",
+        "version": "c3980e954495a86fad5c4e4c1550cbc1eb763952b83e60d1b63fd12c7833c054",
+        "signature": "470ec54820317a2289d339fd1396cebe1ae9f4d85201303d009742d218afcb67",
         "affectsGlobalScope": false
       },
       "../src/listeners/ready.ts": {
@@ -1003,6 +1008,14 @@
         "../src/lib/types/eub.d.ts"
       ],
       "../src/commands/leveling/level.ts": [
+        "../node_modules/tslib/tslib.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
+      "../src/commands/moderation/warn.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/tslib/tslib.d.ts",
         "../src/lib/structures/client.ts",
         "../src/lib/structures/command.ts",
@@ -1417,6 +1430,12 @@
         "../src/lib/structures/command.ts",
         "../src/lib/types/eub.d.ts"
       ],
+      "../src/commands/moderation/warn.ts": [
+        "../node_modules/discord.js/typings/index.d.ts",
+        "../src/lib/structures/client.ts",
+        "../src/lib/structures/command.ts",
+        "../src/lib/types/eub.d.ts"
+      ],
       "../src/features/checkstaff.ts": [
         "../node_modules/discord.js/typings/index.d.ts",
         "../src/lib/structures/client.ts"
@@ -1628,6 +1647,7 @@
       "../src/commands/general/say.ts",
       "../src/commands/general/userinfo.ts",
       "../src/commands/leveling/level.ts",
+      "../src/commands/moderation/warn.ts",
       "../src/eub.ts",
       "../src/features/checkstaff.ts",
       "../src/features/leveling.ts",

@@ -6,18 +6,13 @@ const discord_js_1 = require("discord.js");
 const moment_1 = tslib_1.__importDefault(require("moment"));
 const pretty_ms_1 = tslib_1.__importDefault(require("pretty-ms"));
 const Listener_1 = tslib_1.__importDefault(require("../Lib/Structures/Listener"));
-const PresenceSearch_1 = tslib_1.__importDefault(require("../Features/PresenceSearch"));
 const Leveling_1 = tslib_1.__importDefault(require("../Features/Leveling"));
 class MessageReceived extends Listener_1.default {
     async execute(message) {
         if (message.partial || (message.author.bot))
             return;
         if (message.content.startsWith('!pres'))
-            return message.channel.send([
-                `**Name** ${(await PresenceSearch_1.default('PLAYING', message.member)).name}`,
-                `**Details** ${(await PresenceSearch_1.default('PLAYING', message.member)).details}`,
-                `**State** ${(await PresenceSearch_1.default('PLAYING', message.member)).state}`
-            ].join('\n'));
+            return console.log(`${await this.client.db.get(`${message.member.id}-warnings`, [])}`);
         Leveling_1.default(message, this.client);
         if (message.channel.type === 'dm')
             return this.handleDM(message);
